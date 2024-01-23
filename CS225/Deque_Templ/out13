@@ -1,0 +1,20 @@
+v: size = 17 capacity = 32
+q p o n m l k j i h g f e d c b a 
+v2: size = 17 capacity = 17
+q p o n m l k j i h g f e d c b a 
+--------------------
+v: size = 17 capacity = 32
+q p o n m l k j i h g f e d c b a 
+v2: size = 0 capacity = 2
+
+--------------------
+v: size = 17 capacity = 32
+q p o n m l k j i h g f e d c b a 
+v3: size = 17 capacity = 17
+q p o n m l k j i h g f e d c b a 
+--------------------
+v: size = 0 capacity = 2
+
+v3: size = 17 capacity = 17
+q p o n m l k j i h g f e d c b a 
+--------------------

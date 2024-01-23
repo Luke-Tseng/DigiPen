@@ -1,0 +1,16 @@
+v: size = 20 capacity = 32
+19 18 17 16 15 14 13 12 11 10 9 8 7 6 5 4 3 2 1 0 
+v_copy: size = 20 capacity = 20
+19 18 17 16 15 14 13 12 11 10 9 8 7 6 5 4 3 2 1 0 
+v: size = 20 capacity = 32
+19 18 17 16 15 14 13 12 11 10 9 8 7 6 5 4 3 2 1 0 
+v_copy: size = 0 capacity = 2
+
+v: size = 20 capacity = 32
+19 18 17 16 15 14 13 12 11 10 9 8 7 6 5 4 3 2 1 0 
+v_copy2: size = 20 capacity = 20
+19 18 17 16 15 14 13 12 11 10 9 8 7 6 5 4 3 2 1 0 
+v: size = 0 capacity = 2
+
+v_copy2: size = 20 capacity = 20
+19 18 17 16 15 14 13 12 11 10 9 8 7 6 5 4 3 2 1 0 

@@ -1,0 +1,22 @@
+MSBuild version 17.7.2+d6990bcfa for .NET Framework
+Build started 11/13/2023 2:02:44 PM.
+
+Project "C:\Users\lukeg\source\repos\CS260\CS260_Assignment3\CS260-3\CS260_Assignment3.vcxproj" on node 1 (default targets).
+InitializeBuildStatus:
+  Creating "Debug\CS260_As.a3c75360.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+  Touching "Debug\CS260_As.a3c75360.tlog\unsuccessfulbuild".
+ClCompile:
+  All outputs are up-to-date.
+Link:
+  All outputs are up-to-date.
+  CS260_Assignment3.vcxproj -> C:\Users\lukeg\source\repos\CS260\CS260_Assignment3\CS260-3\Debug\CS260_Assignment3.exe
+FinalizeBuildStatus:
+  Deleting file "Debug\CS260_As.a3c75360.tlog\unsuccessfulbuild".
+  Touching "Debug\CS260_As.a3c75360.tlog\CS260_Assignment3.lastbuildstate".
+Done Building Project "C:\Users\lukeg\source\repos\CS260\CS260_Assignment3\CS260-3\CS260_Assignment3.vcxproj" (default targets).
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:00.41

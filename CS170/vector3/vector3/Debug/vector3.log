@@ -1,0 +1,12 @@
+﻿  driver.cpp
+  Vector.cpp
+C:\Users\lukeg\source\repos\vector3\vector3\Vector.cpp(39,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\lukeg\source\repos\vector3\vector3\Vector.cpp(93,9): error C3861: 'check_bounds': identifier not found
+C:\Users\lukeg\source\repos\vector3\vector3\Vector.cpp(118,9): error C3861: 'check_bounds': identifier not found
+C:\Users\lukeg\source\repos\vector3\vector3\Vector.cpp(123,9): error C3861: 'check_bounds': identifier not found
+C:\Users\lukeg\source\repos\vector3\vector3\Vector.cpp(182,18): error C2039: 'check_bounds': is not a member of 'CS170::Vector'
+C:\Users\lukeg\source\repos\vector3\vector3\Vector.h(9): message : see declaration of 'CS170::Vector'
+C:\Users\lukeg\source\repos\vector3\vector3\Vector.cpp(183,5): error C2270: 'check_bounds': modifiers not allowed on nonmember functions
+C:\Users\lukeg\source\repos\vector3\vector3\Vector.cpp(185,22): error C2065: 'size_': undeclared identifier
+C:\Users\lukeg\source\repos\vector3\vector3\Vector.cpp(188,58): error C2065: 'size_': undeclared identifier
+  Generating Code...

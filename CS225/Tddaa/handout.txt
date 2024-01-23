@@ -1,0 +1,5 @@
+Implement dynamically allocated 3D array.
+
+Function "allocate" takes 3 arguments which are the three dimensions starting from major to minor.
+
+See skeleton implementation for diagrams.

@@ -1,0 +1,172 @@
+{
+    "files.associations": {
+        "stdlib.h": "c",
+        "tddaa.h": "c",
+        "stdio.h": "c",
+        "vector": "cpp",
+        "xstring": "cpp",
+        "initializer_list": "cpp",
+        "type_traits": "cpp",
+        "xutility": "cpp",
+        "deque": "cpp",
+        "random": "cpp",
+        "atomic": "cpp",
+        "bit": "cpp",
+        "cctype": "cpp",
+        "clocale": "cpp",
+        "cmath": "cpp",
+        "compare": "cpp",
+        "concepts": "cpp",
+        "cstddef": "cpp",
+        "cstdint": "cpp",
+        "cstdio": "cpp",
+        "cstdlib": "cpp",
+        "cstring": "cpp",
+        "ctime": "cpp",
+        "cwchar": "cpp",
+        "exception": "cpp",
+        "fstream": "cpp",
+        "iomanip": "cpp",
+        "ios": "cpp",
+        "iosfwd": "cpp",
+        "iostream": "cpp",
+        "istream": "cpp",
+        "iterator": "cpp",
+        "limits": "cpp",
+        "memory": "cpp",
+        "new": "cpp",
+        "ostream": "cpp",
+        "stdexcept": "cpp",
+        "streambuf": "cpp",
+        "system_error": "cpp",
+        "tuple": "cpp",
+        "typeinfo": "cpp",
+        "utility": "cpp",
+        "xfacet": "cpp",
+        "xiosbase": "cpp",
+        "xlocale": "cpp",
+        "xlocinfo": "cpp",
+        "xlocmon": "cpp",
+        "xlocnum": "cpp",
+        "xloctime": "cpp",
+        "xmemory": "cpp",
+        "xstddef": "cpp",
+        "xtr1common": "cpp",
+        "algorithm": "cpp",
+        "locale": "cpp",
+        "regex": "cpp",
+        "string": "cpp",
+        "xlocbuf": "cpp",
+        "xlocmes": "cpp",
+        "forward_list": "cpp",
+        "list": "cpp",
+        "map": "cpp",
+        "functional": "cpp",
+        "numeric": "cpp",
+        "unordered_map": "cpp",
+        "xhash": "cpp",
+        "xtree": "cpp",
+        "queue": "cpp",
+        "stack": "cpp",
+        "charconv": "cpp",
+        "chrono": "cpp",
+        "format": "cpp",
+        "mutex": "cpp",
+        "optional": "cpp",
+        "ratio": "cpp",
+        "sstream": "cpp",
+        "stop_token": "cpp",
+        "thread": "cpp",
+        "ranges": "cpp",
+        "span": "cpp",
+        "array": "cpp",
+        "set": "cpp",
+        "bitset": "cpp"
+    },
+    "terminal.integrated.fontWeight": "normal",
+    "terminal.integrated.fontSize": 14,
+    "editor.fontFamily": "Consolas",
+    "latex-workshop.latex.tools": [
+        {
+         "name": "latexmk",
+         "command": "latexmk",
+         "args": [
+          "-synctex=1",
+          "-interaction=nonstopmode",
+          "-file-line-error",
+          "-pdf",
+          "-outdir=%OUTDIR%",
+          "%DOC%"
+         ],
+         "env": {}
+        },
+        {
+         "name": "xelatex",
+         "command": "xelatex",
+         "args": [
+          "-synctex=1",
+          "-interaction=nonstopmode",
+          "-file-line-error",
+          "%DOC%"
+         ],
+         "env": {}
+        },
+        {
+         "name": "pdflatex",
+         "command": "pdflatex",
+         "args": [
+          "-synctex=1",
+          "-interaction=nonstopmode",
+          "-file-line-error",
+          "%DOC%"
+         ],
+         "env": {}
+        },
+        {
+         "name": "bibtex",
+         "command": "bibtex",
+         "args": [
+          "%DOCFILE%"
+         ],
+         "env": {}
+        }
+       ],
+       "latex-workshop.latex.recipes": [
+        {
+         "name": "pdfLaTeX",
+         "tools": [
+          "pdflatex"
+         ]
+        },
+        {
+         "name": "latexmk 🔃",
+         "tools": [
+          "latexmk"
+         ]
+        },
+        {
+         "name": "xelatex",
+         "tools": [
+          "xelatex"
+         ]
+        },
+        {
+         "name": "pdflatex ➞ bibtex ➞ pdflatex`×2",
+         "tools": [
+          "pdflatex",
+          "bibtex",
+          "pdflatex",
+          "pdflatex"
+         ]
+        },
+        {
+        "name": "xelatex ➞ bibtex ➞ xelatex`×2",
+        "tools": [
+          "xelatex",
+          "bibtex",
+          "xelatex",
+          "xelatex"
+         ]
+        }
+       ]       
+}

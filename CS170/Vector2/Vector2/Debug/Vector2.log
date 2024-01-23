@@ -1,0 +1,3 @@
+﻿  Vector.cpp
+C:\Users\lukeg\source\repos\CS170\Vector2\Vector2\Vector.cpp(39,27): warning C4018: '<': signed/unsigned mismatch
+  Vector2.vcxproj -> C:\Users\lukeg\source\repos\CS170\Vector2\Debug\Vector2.exe

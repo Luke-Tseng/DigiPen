@@ -1,0 +1,12 @@
+Implement templated class Polynomial:
+    T - type of coefficient
+    N - degree of polynomial
+
+Make use of static allocations for the array of coefficients.
+
+Do not implement methods that compiler will implement correctly.
+
+See notes on class website:
+    how to implement 1-1 friendship for operator<<
+
+

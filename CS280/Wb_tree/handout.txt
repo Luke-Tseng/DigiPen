@@ -1,0 +1,202 @@
+weight balanced tree
+--------------------
+First of all the definition of weight-balanced
+tree: we call a tree alpha-weight-balanced if for every node:
+number of nodes in left subtree <= alpha * number of nodes in the subtree at the node
+number of nodes in tree subtree <= alpha * number of nodes in the subtree at the node
+
+If 
+struct TreeNode 
+{
+    int data;
+    TreeNode * left;
+    TreeNode * right;
+    int size; // number nodes in the subtree rooted at this node including node itself
+};
+then the definition is:
+size( left( n ) )  <= alpha * size( n ) // if left( n ) is not NULL
+size( right( n ) ) <= alpha * size( n ) // if right( n ) is not NULL
+
+Note: 
+size( n ) = size( left( n ) + size( right( n ) ) + 1                           (*)
+
+The meaningful values of alpha are between 1/2 and 1:
+
+if alpha=1 then ANY tree is balanced:
+size( left( n ) ) <= size( n )-1 < 1 * size( n )
+
+if alpha=1/2, then the tree is almost perfectly balanced:
+size( left( n ) )  <= size( n ) / 2
+size( right( n ) ) <= size( n ) / 2
+using (*)
+size( left( n ) )  <= ( size( left( n ) + size( right( n ) ) + 1 ) / 2
+size( right( n ) ) <= ( size( left( n ) + size( right( n ) ) + 1 ) / 2
+multiply by 2:
+2 * size( left( n ) )  <= size( left( n ) ) + size( right( n ) ) + 1 
+2 * size( right( n ) ) <= size( left( n ) ) + size( right( n ) ) + 1
+simplify
+size( left( n ) )  <= size( right( n ) ) + 1 
+size( right( n ) ) <= size( left( n ) )  + 1
+meaning
+the sizes of the 2 subtrees are differ by no more than 1.
+
+More realistic example alpha=0.8, number in parenthesis is size:
+     5 (4)
+       \
+        6 (3)
+         \ 
+          7 (2)
+           \
+            8 (1)
+is 0.8-weight balanced - check the root:
+0 <= 0.8 * 4
+3 <= 0.8 * 4
+all another nodes are balanced too.
+
+Same alpha=0.8:
+     5 (5)
+       \
+        6 (4)
+         \ 
+          7 (3)
+           \
+            8 (2)
+             \
+              9 (1)
+Is also balanced - check root:
+0 <= 0.8 * 5 (holds)
+4 <= 0.8 * 5 (equality, but it is allowed)
+
+Same alpha=0.8:
+     5 (6)
+       \
+        6 (5)
+         \ 
+          7 (4)
+           \
+            8 (3)
+             \
+              9 (2)
+               \
+                10 (1)
+Is not balanced at root:
+0 <= 0.8 * 6 (holds)
+5 <= 0.8 * 6 (failed)
+
+To rebalance a tree, the whole unbalanced subtree is redone by 
+transforming into almost perfectly balanced tree (see below).
+
+Insert:
+simple BST insert, which also update size counters of all ancestors 
+of the just inserted nodes. After sizes have been updated, several
+of those ancestors may become un-balanced. The closest to the 
+root is chosen for re-balance.
+
+Delete: (not required by this lab)
+same as insert
+
+Find:
+regular BST find
+
+
+Rebalancing:
+to build an almost balanced tree from a given subtree:
+1) read data from the subtree using in-order traversal (so it's sorted)
+2) make median element a new root
+3) recursively build almost balanced trees from left and right 
+   halves of the array and connect to the new root as left and right subtrees.
+
+Example:
+1) 
+     1
+       \
+        2
+         \ 
+          3
+           \
+            4
+             \
+              5
+               \
+                6
+
+array 1 2 3 4 5 6
+2) median is at index size/2=6/2=3, so 4 is new root
+      4
+     / \
+  123   56
+
+recursively process 123 to get, median (index 3/2=1 - integer division), so node 2 is median, so 
+   2
+  / \
+ 1   3
+recursively process 56 to get, median 6 (index 2/2=1), so 
+   6
+  /
+ 5
+So final result 
+       4
+     /   \
+    2     6
+   / \   / 
+  1   3 5
+
+This algorithm is linear in time.
+
+Comparison with AVL:
+AVL trees have many O( log(N) ) rebalance operations
+weight-balanced trees have few (depends on alpha) more expensive O( N ) operations
+
+Example more than 1 unbalanced nodes, showing sizes
+initial tree, alpha=2/3:
+           27   <-- balanced, 18 <= 2/3 * 27
+          /  \ 
+        ...   18  <-- balanced, 12 <= 2/3 * 18
+                \
+                 12
+
+insert so that tree becomes
+           28   <-- un-balanced, 19 > 2/3 * 28
+          /  \ 
+        ...   19    <-- un-balanced, 13 > 2/3 * 19 
+                \
+                 13
+
+
+Bigger example:
+31 value 0..30 inserted into a tree to create a perfectly balanced tree:
+see perfect-31-node.ps
+
+5 more big values added - no re-balancing required alpha=0.8
+see perfect-31-node-with-5-inserted.ps
+
+one more big value added, balancing was required,
+highest unbalanced node 30
+parent of 30 should be updated - it's right child now is 33.
+see perfect-31-node-with-6-inserted-and-rebalanced.ps
+
+
+Note:
+When you build a "perfect" tree from a sorted array you need a middle element.
+There are 3 ways to do so (all 3 are logically correct). It depends on how you
+keep track of the array (using int for discussion purposes):
+
+1) int* a, int size 
+middle = size/2;
+
+2) int* a, int first, int last // last is INSIDE array
+middle = (first+last)/2
+
+3) int* a, int first, int end // one past last, end id outside
+middle = (first+end)/2
+
+The 3 will have the same middle for odd sizes, but for even sizes:
+0 1 2 3 4 5 // 6 elements
+1) size=6, middle is index 3
+2) first=0, last=5, middle is index 2
+3) first=0, end=6, middle is index 3
+
+I use 1), so if you use 2) output does not match. Quick fix:
+2) int* a, int first, int last // last is INSIDE array
+middle = (first+last+1)/2 // add +1 to match my output
+

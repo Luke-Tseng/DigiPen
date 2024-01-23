@@ -1,0 +1,162 @@
+test1
+size = 0 capacity = 0
+array=nullptr
+--------------------
+size = 1 capacity = 1
+  0 indices
+  0 data
+  be
+size = 2 capacity = 2
+  0  1 indices
+  0  1 data
+  be
+size = 3 capacity = 4
+  0  1  2  3 indices
+  0  1  2  . data
+  b        e
+size = 4 capacity = 4
+  0  1  2  3 indices
+  0  1  2  3 data
+  be
+size = 5 capacity = 8
+  0  1  2  3  4  5  6  7 indices
+  0  1  2  3  4  .  .  . data
+  b              e
+size = 6 capacity = 8
+  0  1  2  3  4  5  6  7 indices
+  0  1  2  3  4  5  .  . data
+  b                 e
+size = 7 capacity = 8
+  0  1  2  3  4  5  6  7 indices
+  0  1  2  3  4  5  6  . data
+  b                    e
+size = 8 capacity = 8
+  0  1  2  3  4  5  6  7 indices
+  0  1  2  3  4  5  6  7 data
+  be
+size = 9 capacity = 16
+  0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 indices
+  0  1  2  3  4  5  6  7  8  .  .  .  .  .  .  . data
+  b                          e
+size = 10 capacity = 16
+  0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 indices
+  0  1  2  3  4  5  6  7  8  9  .  .  .  .  .  . data
+  b                             e
+size = 11 capacity = 16
+  0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 indices
+  0  1  2  3  4  5  6  7  8  9 10  .  .  .  .  . data
+  b                                e
+size = 12 capacity = 16
+  0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 indices
+  0  1  2  3  4  5  6  7  8  9 10 11  .  .  .  . data
+  b                                   e
+size = 13 capacity = 16
+  0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 indices
+  0  1  2  3  4  5  6  7  8  9 10 11 12  .  .  . data
+  b                                      e
+--------------------
+size = 12 capacity = 16
+  0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 indices
+  0  1  2  3  4  5  6  7  8  9 10 11  .  .  .  . data
+  b                                   e
+size = 11 capacity = 16
+  0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 indices
+  0  1  2  3  4  5  6  7  8  9 10  .  .  .  .  . data
+  b                                e
+size = 10 capacity = 16
+  0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 indices
+  0  1  2  3  4  5  6  7  8  9  .  .  .  .  .  . data
+  b                             e
+size = 9 capacity = 16
+  0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 indices
+  0  1  2  3  4  5  6  7  8  .  .  .  .  .  .  . data
+  b                          e
+size = 8 capacity = 16
+  0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 indices
+  0  1  2  3  4  5  6  7  .  .  .  .  .  .  .  . data
+  b                       e
+size = 7 capacity = 16
+  0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 indices
+  0  1  2  3  4  5  6  .  .  .  .  .  .  .  .  . data
+  b                    e
+size = 6 capacity = 16
+  0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 indices
+  0  1  2  3  4  5  .  .  .  .  .  .  .  .  .  . data
+  b                 e
+size = 5 capacity = 16
+  0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 indices
+  0  1  2  3  4  .  .  .  .  .  .  .  .  .  .  . data
+  b              e
+size = 4 capacity = 16
+  0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 indices
+  0  1  2  3  .  .  .  .  .  .  .  .  .  .  .  . data
+  b           e
+size = 3 capacity = 8
+  0  1  2  3  4  5  6  7 indices
+  0  1  2  .  .  .  .  . data
+  b        e
+size = 2 capacity = 8
+  0  1  2  3  4  5  6  7 indices
+  0  1  .  .  .  .  .  . data
+  b     e
+size = 1 capacity = 4
+  0  1  2  3 indices
+  0  .  .  . data
+  b  e
+size = 0 capacity = 2
+  0  1 indices
+  .  . data
+  be
+--------------------
+size = 1 capacity = 2
+  0  1 indices
+  0  . data
+  b  e
+size = 2 capacity = 2
+  0  1 indices
+  0  1 data
+  be
+size = 3 capacity = 4
+  0  1  2  3 indices
+  0  1  2  . data
+  b        e
+size = 4 capacity = 4
+  0  1  2  3 indices
+  0  1  2  3 data
+  be
+size = 5 capacity = 8
+  0  1  2  3  4  5  6  7 indices
+  0  1  2  3  4  .  .  . data
+  b              e
+size = 6 capacity = 8
+  0  1  2  3  4  5  6  7 indices
+  0  1  2  3  4  5  .  . data
+  b                 e
+size = 7 capacity = 8
+  0  1  2  3  4  5  6  7 indices
+  0  1  2  3  4  5  6  . data
+  b                    e
+size = 8 capacity = 8
+  0  1  2  3  4  5  6  7 indices
+  0  1  2  3  4  5  6  7 data
+  be
+size = 9 capacity = 16
+  0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 indices
+  0  1  2  3  4  5  6  7  8  .  .  .  .  .  .  . data
+  b                          e
+size = 10 capacity = 16
+  0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 indices
+  0  1  2  3  4  5  6  7  8  9  .  .  .  .  .  . data
+  b                             e
+size = 11 capacity = 16
+  0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 indices
+  0  1  2  3  4  5  6  7  8  9 10  .  .  .  .  . data
+  b                                e
+size = 12 capacity = 16
+  0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 indices
+  0  1  2  3  4  5  6  7  8  9 10 11  .  .  .  . data
+  b                                   e
+size = 13 capacity = 16
+  0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 indices
+  0  1  2  3  4  5  6  7  8  9 10 11 12  .  .  . data
+  b                                      e

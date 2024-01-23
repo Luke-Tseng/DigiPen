@@ -1,0 +1,109 @@
+For this assignment you will 
+1) convert previous rangelist into C++ class RangeList
+2) implement Proxy design pattern to support index operator
+3) implement scalar multiplication and vector addition
+
+11111111111111111111111111111111111
+===================================
+The first part should be straightforward:
+  a) implement constructors, destructors as required by the driver's tests 0..6 
+  b) implement assignment operator (test7)
+
+22222222222222222222222222222222222
+===================================
+The second part introduces you to the Proxy design pattern. Consider 
+RangeList rl;
+rl[6] = 5; // instead of rl.insert_value( 6, 5 );
+
+Notice that when using 
+rl.insert_value( 6, 5 ); 
+the insert_value function KNOWS BOTH 1) the value being inserted and 2) where it is inserted. 
+For example the function may use logic like:
+if ( value == 0 ) {
+  if ( position exists ) {
+    delete position
+  } else {
+    do nothing
+  }
+} else { 
+  if ( position exists ) {
+    just modify value
+  } else {
+    create new node
+  }
+}
+
+But with the new syntax the work that previously was done by a SINGLE function insert_value
+is now DISTRIBUTED among several players: RHS (expression), LHS (operator[]), and the middle (assignment operator):
+ rl[6] = 5;
+// 1   3 2   // order of evaluation
+
+Notice that the first player (LHS, i.e. operator[] ) KNOWS the position, but not the value that is inserted.
+Notice that the third player (assignment operator)   KNOWS value, but may not know the position (depends on the return value of the operator[] - see below).
+
+Let's see how the return value of the operator[] effects the logic:
+
+Attempt 1 - (classical operator[] implementation)
+operator[] creates node if the position does not exist
+                                     b  e  data
+int& operator[]( int pos ) {        +--+--+----+
+  // create node for position pos   |  |  |  <---------- reference to data is returned
+  node.value = 5;                   +--+--+----+
+  return node->value; // return by reference
+}
+since the return value is int& , the "=" in (rl[6] = 5) is the integer assignment (built-in integer assignment). 
+This scenario (non-existing location is assigned a non-zero value) works as expected.
+
+But what about
+rl[6] = 0; // assume position 6 does not exist
+
+Since operator[] does NOT know about zero, it will create a node for position 6.
+And then zero is written into the created node by the assignment operator. 
+Since it is a built-in assignment operator, we cannot modify its behavior (by telling zero menas "delete").
+You cannot inject (add) user logic into built-in functions.
+
+The above problem will happen even in this case:
+std::cout << rl[10] << std::endl; // pos 10 did not exist before, so index will create it
+
+Attempt 2:
+BIG IDEA: the key is to understand that 
+rl[5] = 6;
+will never work correctly UNLESS operator= is 
+A) user defined - so that we can inject user logic 
+B) knows more about the RangeList (not just a reference to value), so that operator= can delete data etc
+
+to make operator[] user-defined, create another class:
+class Proxy {
+  
+  Proxy( ... ) // ctor should be provided with enough information so that Proxy object
+               // specifically Proxy::operator[] can do what insert_value was doing before
+
+   ... operator=( int i ) { // this is the user-defined operator=
+                            // that decides how to proceed (or just calls insert_value
+  }
+};
+
+// make operator index to return that user-defined object (Proxy)
+Proxy RangeList::operator[]( int pos ) {
+ return Proxy( this, pos ); // tell proxy about RangeList (this) and the position 
+}
+// now:
+rl[6] = 5;
+// results in
+Proxy = 5; // compiler calls Proxy::operator=
+
+33333333333333333333333333333333333
+===================================
+implement scalar multiplication and vector addition. 
+
+Scalar multiplication is defined as 
+int result = 0 ;
+for ( int i=0; i<dimension; ++i ) {
+  result += a[i]*b[i];
+}
+
+Vector addition is defined as
+RangeList result;
+for ( int i=0; i<dimension; ++i ) {
+  result[i] = a[i] + b[i];
+}

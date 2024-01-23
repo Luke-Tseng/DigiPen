@@ -1,0 +1,977 @@
+================================================
+Final: 
+1 1 1 1 + 1 1 1 1 1 1 = 1 1 1 1 1 1 1 1 1 1 
+Number of steps 240
+================================================
+Final: 
+1 1 1 1 + 1 1 1 1 1 1 = 1 1 1 1 1 1 1 1 1 1 
+halt
+================================================
+Start: 
+1 1 1 1 + 1 1 1 1 1 1 = 
+^ (G)
+
+After using rule: G 1 2 A right
+2 1 1 1 + 1 1 1 1 1 1 = 
+  ^ (A)
+
+After using rule: A 1 1 A right
+2 1 1 1 + 1 1 1 1 1 1 = 
+    ^ (A)
+
+After using rule: A 1 1 A right
+2 1 1 1 + 1 1 1 1 1 1 = 
+      ^ (A)
+
+After using rule: A 1 1 A right
+2 1 1 1 + 1 1 1 1 1 1 = 
+        ^ (A)
+
+After using rule: A + + A right
+2 1 1 1 + 1 1 1 1 1 1 = 
+          ^ (A)
+
+After using rule: A 1 1 A right
+2 1 1 1 + 1 1 1 1 1 1 = 
+            ^ (A)
+
+After using rule: A 1 1 A right
+2 1 1 1 + 1 1 1 1 1 1 = 
+              ^ (A)
+
+After using rule: A 1 1 A right
+2 1 1 1 + 1 1 1 1 1 1 = 
+                ^ (A)
+
+After using rule: A 1 1 A right
+2 1 1 1 + 1 1 1 1 1 1 = 
+                  ^ (A)
+
+After using rule: A 1 1 A right
+2 1 1 1 + 1 1 1 1 1 1 = 
+                    ^ (A)
+
+After using rule: A 1 1 A right
+2 1 1 1 + 1 1 1 1 1 1 = 
+                      ^ (A)
+
+After using rule: A = = D right
+2 1 1 1 + 1 1 1 1 1 1 = _ 
+                        ^ (D)
+
+After using rule: D _ 1 B left
+2 1 1 1 + 1 1 1 1 1 1 = 1 
+                      ^ (B)
+
+After using rule: B = = B left
+2 1 1 1 + 1 1 1 1 1 1 = 1 
+                    ^ (B)
+
+After using rule: B 1 1 B left
+2 1 1 1 + 1 1 1 1 1 1 = 1 
+                  ^ (B)
+
+After using rule: B 1 1 B left
+2 1 1 1 + 1 1 1 1 1 1 = 1 
+                ^ (B)
+
+After using rule: B 1 1 B left
+2 1 1 1 + 1 1 1 1 1 1 = 1 
+              ^ (B)
+
+After using rule: B 1 1 B left
+2 1 1 1 + 1 1 1 1 1 1 = 1 
+            ^ (B)
+
+After using rule: B 1 1 B left
+2 1 1 1 + 1 1 1 1 1 1 = 1 
+          ^ (B)
+
+After using rule: B 1 1 B left
+2 1 1 1 + 1 1 1 1 1 1 = 1 
+        ^ (B)
+
+After using rule: B + + B left
+2 1 1 1 + 1 1 1 1 1 1 = 1 
+      ^ (B)
+
+After using rule: B 1 1 B left
+2 1 1 1 + 1 1 1 1 1 1 = 1 
+    ^ (B)
+
+After using rule: B 1 1 B left
+2 1 1 1 + 1 1 1 1 1 1 = 1 
+  ^ (B)
+
+After using rule: B 1 1 B left
+2 1 1 1 + 1 1 1 1 1 1 = 1 
+^ (B)
+
+After using rule: B 2 1 G right
+1 1 1 1 + 1 1 1 1 1 1 = 1 
+  ^ (G)
+
+After using rule: G 1 2 A right
+1 2 1 1 + 1 1 1 1 1 1 = 1 
+    ^ (A)
+
+After using rule: A 1 1 A right
+1 2 1 1 + 1 1 1 1 1 1 = 1 
+      ^ (A)
+
+After using rule: A 1 1 A right
+1 2 1 1 + 1 1 1 1 1 1 = 1 
+        ^ (A)
+
+After using rule: A + + A right
+1 2 1 1 + 1 1 1 1 1 1 = 1 
+          ^ (A)
+
+After using rule: A 1 1 A right
+1 2 1 1 + 1 1 1 1 1 1 = 1 
+            ^ (A)
+
+After using rule: A 1 1 A right
+1 2 1 1 + 1 1 1 1 1 1 = 1 
+              ^ (A)
+
+After using rule: A 1 1 A right
+1 2 1 1 + 1 1 1 1 1 1 = 1 
+                ^ (A)
+
+After using rule: A 1 1 A right
+1 2 1 1 + 1 1 1 1 1 1 = 1 
+                  ^ (A)
+
+After using rule: A 1 1 A right
+1 2 1 1 + 1 1 1 1 1 1 = 1 
+                    ^ (A)
+
+After using rule: A 1 1 A right
+1 2 1 1 + 1 1 1 1 1 1 = 1 
+                      ^ (A)
+
+After using rule: A = = D right
+1 2 1 1 + 1 1 1 1 1 1 = 1 
+                        ^ (D)
+
+After using rule: D 1 1 D right
+1 2 1 1 + 1 1 1 1 1 1 = 1 _ 
+                          ^ (D)
+
+After using rule: D _ 1 B left
+1 2 1 1 + 1 1 1 1 1 1 = 1 1 
+                        ^ (B)
+
+After using rule: B 1 1 B left
+1 2 1 1 + 1 1 1 1 1 1 = 1 1 
+                      ^ (B)
+
+After using rule: B = = B left
+1 2 1 1 + 1 1 1 1 1 1 = 1 1 
+                    ^ (B)
+
+After using rule: B 1 1 B left
+1 2 1 1 + 1 1 1 1 1 1 = 1 1 
+                  ^ (B)
+
+After using rule: B 1 1 B left
+1 2 1 1 + 1 1 1 1 1 1 = 1 1 
+                ^ (B)
+
+After using rule: B 1 1 B left
+1 2 1 1 + 1 1 1 1 1 1 = 1 1 
+              ^ (B)
+
+After using rule: B 1 1 B left
+1 2 1 1 + 1 1 1 1 1 1 = 1 1 
+            ^ (B)
+
+After using rule: B 1 1 B left
+1 2 1 1 + 1 1 1 1 1 1 = 1 1 
+          ^ (B)
+
+After using rule: B 1 1 B left
+1 2 1 1 + 1 1 1 1 1 1 = 1 1 
+        ^ (B)
+
+After using rule: B + + B left
+1 2 1 1 + 1 1 1 1 1 1 = 1 1 
+      ^ (B)
+
+After using rule: B 1 1 B left
+1 2 1 1 + 1 1 1 1 1 1 = 1 1 
+    ^ (B)
+
+After using rule: B 1 1 B left
+1 2 1 1 + 1 1 1 1 1 1 = 1 1 
+  ^ (B)
+
+After using rule: B 2 1 G right
+1 1 1 1 + 1 1 1 1 1 1 = 1 1 
+    ^ (G)
+
+After using rule: G 1 2 A right
+1 1 2 1 + 1 1 1 1 1 1 = 1 1 
+      ^ (A)
+
+After using rule: A 1 1 A right
+1 1 2 1 + 1 1 1 1 1 1 = 1 1 
+        ^ (A)
+
+After using rule: A + + A right
+1 1 2 1 + 1 1 1 1 1 1 = 1 1 
+          ^ (A)
+
+After using rule: A 1 1 A right
+1 1 2 1 + 1 1 1 1 1 1 = 1 1 
+            ^ (A)
+
+After using rule: A 1 1 A right
+1 1 2 1 + 1 1 1 1 1 1 = 1 1 
+              ^ (A)
+
+After using rule: A 1 1 A right
+1 1 2 1 + 1 1 1 1 1 1 = 1 1 
+                ^ (A)
+
+After using rule: A 1 1 A right
+1 1 2 1 + 1 1 1 1 1 1 = 1 1 
+                  ^ (A)
+
+After using rule: A 1 1 A right
+1 1 2 1 + 1 1 1 1 1 1 = 1 1 
+                    ^ (A)
+
+After using rule: A 1 1 A right
+1 1 2 1 + 1 1 1 1 1 1 = 1 1 
+                      ^ (A)
+
+After using rule: A = = D right
+1 1 2 1 + 1 1 1 1 1 1 = 1 1 
+                        ^ (D)
+
+After using rule: D 1 1 D right
+1 1 2 1 + 1 1 1 1 1 1 = 1 1 
+                          ^ (D)
+
+After using rule: D 1 1 D right
+1 1 2 1 + 1 1 1 1 1 1 = 1 1 _ 
+                            ^ (D)
+
+After using rule: D _ 1 B left
+1 1 2 1 + 1 1 1 1 1 1 = 1 1 1 
+                          ^ (B)
+
+After using rule: B 1 1 B left
+1 1 2 1 + 1 1 1 1 1 1 = 1 1 1 
+                        ^ (B)
+
+After using rule: B 1 1 B left
+1 1 2 1 + 1 1 1 1 1 1 = 1 1 1 
+                      ^ (B)
+
+After using rule: B = = B left
+1 1 2 1 + 1 1 1 1 1 1 = 1 1 1 
+                    ^ (B)
+
+After using rule: B 1 1 B left
+1 1 2 1 + 1 1 1 1 1 1 = 1 1 1 
+                  ^ (B)
+
+After using rule: B 1 1 B left
+1 1 2 1 + 1 1 1 1 1 1 = 1 1 1 
+                ^ (B)
+
+After using rule: B 1 1 B left
+1 1 2 1 + 1 1 1 1 1 1 = 1 1 1 
+              ^ (B)
+
+After using rule: B 1 1 B left
+1 1 2 1 + 1 1 1 1 1 1 = 1 1 1 
+            ^ (B)
+
+After using rule: B 1 1 B left
+1 1 2 1 + 1 1 1 1 1 1 = 1 1 1 
+          ^ (B)
+
+After using rule: B 1 1 B left
+1 1 2 1 + 1 1 1 1 1 1 = 1 1 1 
+        ^ (B)
+
+After using rule: B + + B left
+1 1 2 1 + 1 1 1 1 1 1 = 1 1 1 
+      ^ (B)
+
+After using rule: B 1 1 B left
+1 1 2 1 + 1 1 1 1 1 1 = 1 1 1 
+    ^ (B)
+
+After using rule: B 2 1 G right
+1 1 1 1 + 1 1 1 1 1 1 = 1 1 1 
+      ^ (G)
+
+After using rule: G 1 2 A right
+1 1 1 2 + 1 1 1 1 1 1 = 1 1 1 
+        ^ (A)
+
+After using rule: A + + A right
+1 1 1 2 + 1 1 1 1 1 1 = 1 1 1 
+          ^ (A)
+
+After using rule: A 1 1 A right
+1 1 1 2 + 1 1 1 1 1 1 = 1 1 1 
+            ^ (A)
+
+After using rule: A 1 1 A right
+1 1 1 2 + 1 1 1 1 1 1 = 1 1 1 
+              ^ (A)
+
+After using rule: A 1 1 A right
+1 1 1 2 + 1 1 1 1 1 1 = 1 1 1 
+                ^ (A)
+
+After using rule: A 1 1 A right
+1 1 1 2 + 1 1 1 1 1 1 = 1 1 1 
+                  ^ (A)
+
+After using rule: A 1 1 A right
+1 1 1 2 + 1 1 1 1 1 1 = 1 1 1 
+                    ^ (A)
+
+After using rule: A 1 1 A right
+1 1 1 2 + 1 1 1 1 1 1 = 1 1 1 
+                      ^ (A)
+
+After using rule: A = = D right
+1 1 1 2 + 1 1 1 1 1 1 = 1 1 1 
+                        ^ (D)
+
+After using rule: D 1 1 D right
+1 1 1 2 + 1 1 1 1 1 1 = 1 1 1 
+                          ^ (D)
+
+After using rule: D 1 1 D right
+1 1 1 2 + 1 1 1 1 1 1 = 1 1 1 
+                            ^ (D)
+
+After using rule: D 1 1 D right
+1 1 1 2 + 1 1 1 1 1 1 = 1 1 1 _ 
+                              ^ (D)
+
+After using rule: D _ 1 B left
+1 1 1 2 + 1 1 1 1 1 1 = 1 1 1 1 
+                            ^ (B)
+
+After using rule: B 1 1 B left
+1 1 1 2 + 1 1 1 1 1 1 = 1 1 1 1 
+                          ^ (B)
+
+After using rule: B 1 1 B left
+1 1 1 2 + 1 1 1 1 1 1 = 1 1 1 1 
+                        ^ (B)
+
+After using rule: B 1 1 B left
+1 1 1 2 + 1 1 1 1 1 1 = 1 1 1 1 
+                      ^ (B)
+
+After using rule: B = = B left
+1 1 1 2 + 1 1 1 1 1 1 = 1 1 1 1 
+                    ^ (B)
+
+After using rule: B 1 1 B left
+1 1 1 2 + 1 1 1 1 1 1 = 1 1 1 1 
+                  ^ (B)
+
+After using rule: B 1 1 B left
+1 1 1 2 + 1 1 1 1 1 1 = 1 1 1 1 
+                ^ (B)
+
+After using rule: B 1 1 B left
+1 1 1 2 + 1 1 1 1 1 1 = 1 1 1 1 
+              ^ (B)
+
+After using rule: B 1 1 B left
+1 1 1 2 + 1 1 1 1 1 1 = 1 1 1 1 
+            ^ (B)
+
+After using rule: B 1 1 B left
+1 1 1 2 + 1 1 1 1 1 1 = 1 1 1 1 
+          ^ (B)
+
+After using rule: B 1 1 B left
+1 1 1 2 + 1 1 1 1 1 1 = 1 1 1 1 
+        ^ (B)
+
+After using rule: B + + B left
+1 1 1 2 + 1 1 1 1 1 1 = 1 1 1 1 
+      ^ (B)
+
+After using rule: B 2 1 G right
+1 1 1 1 + 1 1 1 1 1 1 = 1 1 1 1 
+        ^ (G)
+
+After using rule: G + + G right
+1 1 1 1 + 1 1 1 1 1 1 = 1 1 1 1 
+          ^ (G)
+
+After using rule: G 1 2 A right
+1 1 1 1 + 2 1 1 1 1 1 = 1 1 1 1 
+            ^ (A)
+
+After using rule: A 1 1 A right
+1 1 1 1 + 2 1 1 1 1 1 = 1 1 1 1 
+              ^ (A)
+
+After using rule: A 1 1 A right
+1 1 1 1 + 2 1 1 1 1 1 = 1 1 1 1 
+                ^ (A)
+
+After using rule: A 1 1 A right
+1 1 1 1 + 2 1 1 1 1 1 = 1 1 1 1 
+                  ^ (A)
+
+After using rule: A 1 1 A right
+1 1 1 1 + 2 1 1 1 1 1 = 1 1 1 1 
+                    ^ (A)
+
+After using rule: A 1 1 A right
+1 1 1 1 + 2 1 1 1 1 1 = 1 1 1 1 
+                      ^ (A)
+
+After using rule: A = = D right
+1 1 1 1 + 2 1 1 1 1 1 = 1 1 1 1 
+                        ^ (D)
+
+After using rule: D 1 1 D right
+1 1 1 1 + 2 1 1 1 1 1 = 1 1 1 1 
+                          ^ (D)
+
+After using rule: D 1 1 D right
+1 1 1 1 + 2 1 1 1 1 1 = 1 1 1 1 
+                            ^ (D)
+
+After using rule: D 1 1 D right
+1 1 1 1 + 2 1 1 1 1 1 = 1 1 1 1 
+                              ^ (D)
+
+After using rule: D 1 1 D right
+1 1 1 1 + 2 1 1 1 1 1 = 1 1 1 1 _ 
+                                ^ (D)
+
+After using rule: D _ 1 B left
+1 1 1 1 + 2 1 1 1 1 1 = 1 1 1 1 1 
+                              ^ (B)
+
+After using rule: B 1 1 B left
+1 1 1 1 + 2 1 1 1 1 1 = 1 1 1 1 1 
+                            ^ (B)
+
+After using rule: B 1 1 B left
+1 1 1 1 + 2 1 1 1 1 1 = 1 1 1 1 1 
+                          ^ (B)
+
+After using rule: B 1 1 B left
+1 1 1 1 + 2 1 1 1 1 1 = 1 1 1 1 1 
+                        ^ (B)
+
+After using rule: B 1 1 B left
+1 1 1 1 + 2 1 1 1 1 1 = 1 1 1 1 1 
+                      ^ (B)
+
+After using rule: B = = B left
+1 1 1 1 + 2 1 1 1 1 1 = 1 1 1 1 1 
+                    ^ (B)
+
+After using rule: B 1 1 B left
+1 1 1 1 + 2 1 1 1 1 1 = 1 1 1 1 1 
+                  ^ (B)
+
+After using rule: B 1 1 B left
+1 1 1 1 + 2 1 1 1 1 1 = 1 1 1 1 1 
+                ^ (B)
+
+After using rule: B 1 1 B left
+1 1 1 1 + 2 1 1 1 1 1 = 1 1 1 1 1 
+              ^ (B)
+
+After using rule: B 1 1 B left
+1 1 1 1 + 2 1 1 1 1 1 = 1 1 1 1 1 
+            ^ (B)
+
+After using rule: B 1 1 B left
+1 1 1 1 + 2 1 1 1 1 1 = 1 1 1 1 1 
+          ^ (B)
+
+After using rule: B 2 1 G right
+1 1 1 1 + 1 1 1 1 1 1 = 1 1 1 1 1 
+            ^ (G)
+
+After using rule: G 1 2 A right
+1 1 1 1 + 1 2 1 1 1 1 = 1 1 1 1 1 
+              ^ (A)
+
+After using rule: A 1 1 A right
+1 1 1 1 + 1 2 1 1 1 1 = 1 1 1 1 1 
+                ^ (A)
+
+After using rule: A 1 1 A right
+1 1 1 1 + 1 2 1 1 1 1 = 1 1 1 1 1 
+                  ^ (A)
+
+After using rule: A 1 1 A right
+1 1 1 1 + 1 2 1 1 1 1 = 1 1 1 1 1 
+                    ^ (A)
+
+After using rule: A 1 1 A right
+1 1 1 1 + 1 2 1 1 1 1 = 1 1 1 1 1 
+                      ^ (A)
+
+After using rule: A = = D right
+1 1 1 1 + 1 2 1 1 1 1 = 1 1 1 1 1 
+                        ^ (D)
+
+After using rule: D 1 1 D right
+1 1 1 1 + 1 2 1 1 1 1 = 1 1 1 1 1 
+                          ^ (D)
+
+After using rule: D 1 1 D right
+1 1 1 1 + 1 2 1 1 1 1 = 1 1 1 1 1 
+                            ^ (D)
+
+After using rule: D 1 1 D right
+1 1 1 1 + 1 2 1 1 1 1 = 1 1 1 1 1 
+                              ^ (D)
+
+After using rule: D 1 1 D right
+1 1 1 1 + 1 2 1 1 1 1 = 1 1 1 1 1 
+                                ^ (D)
+
+After using rule: D 1 1 D right
+1 1 1 1 + 1 2 1 1 1 1 = 1 1 1 1 1 _ 
+                                  ^ (D)
+
+After using rule: D _ 1 B left
+1 1 1 1 + 1 2 1 1 1 1 = 1 1 1 1 1 1 
+                                ^ (B)
+
+After using rule: B 1 1 B left
+1 1 1 1 + 1 2 1 1 1 1 = 1 1 1 1 1 1 
+                              ^ (B)
+
+After using rule: B 1 1 B left
+1 1 1 1 + 1 2 1 1 1 1 = 1 1 1 1 1 1 
+                            ^ (B)
+
+After using rule: B 1 1 B left
+1 1 1 1 + 1 2 1 1 1 1 = 1 1 1 1 1 1 
+                          ^ (B)
+
+After using rule: B 1 1 B left
+1 1 1 1 + 1 2 1 1 1 1 = 1 1 1 1 1 1 
+                        ^ (B)
+
+After using rule: B 1 1 B left
+1 1 1 1 + 1 2 1 1 1 1 = 1 1 1 1 1 1 
+                      ^ (B)
+
+After using rule: B = = B left
+1 1 1 1 + 1 2 1 1 1 1 = 1 1 1 1 1 1 
+                    ^ (B)
+
+After using rule: B 1 1 B left
+1 1 1 1 + 1 2 1 1 1 1 = 1 1 1 1 1 1 
+                  ^ (B)
+
+After using rule: B 1 1 B left
+1 1 1 1 + 1 2 1 1 1 1 = 1 1 1 1 1 1 
+                ^ (B)
+
+After using rule: B 1 1 B left
+1 1 1 1 + 1 2 1 1 1 1 = 1 1 1 1 1 1 
+              ^ (B)
+
+After using rule: B 1 1 B left
+1 1 1 1 + 1 2 1 1 1 1 = 1 1 1 1 1 1 
+            ^ (B)
+
+After using rule: B 2 1 G right
+1 1 1 1 + 1 1 1 1 1 1 = 1 1 1 1 1 1 
+              ^ (G)
+
+After using rule: G 1 2 A right
+1 1 1 1 + 1 1 2 1 1 1 = 1 1 1 1 1 1 
+                ^ (A)
+
+After using rule: A 1 1 A right
+1 1 1 1 + 1 1 2 1 1 1 = 1 1 1 1 1 1 
+                  ^ (A)
+
+After using rule: A 1 1 A right
+1 1 1 1 + 1 1 2 1 1 1 = 1 1 1 1 1 1 
+                    ^ (A)
+
+After using rule: A 1 1 A right
+1 1 1 1 + 1 1 2 1 1 1 = 1 1 1 1 1 1 
+                      ^ (A)
+
+After using rule: A = = D right
+1 1 1 1 + 1 1 2 1 1 1 = 1 1 1 1 1 1 
+                        ^ (D)
+
+After using rule: D 1 1 D right
+1 1 1 1 + 1 1 2 1 1 1 = 1 1 1 1 1 1 
+                          ^ (D)
+
+After using rule: D 1 1 D right
+1 1 1 1 + 1 1 2 1 1 1 = 1 1 1 1 1 1 
+                            ^ (D)
+
+After using rule: D 1 1 D right
+1 1 1 1 + 1 1 2 1 1 1 = 1 1 1 1 1 1 
+                              ^ (D)
+
+After using rule: D 1 1 D right
+1 1 1 1 + 1 1 2 1 1 1 = 1 1 1 1 1 1 
+                                ^ (D)
+
+After using rule: D 1 1 D right
+1 1 1 1 + 1 1 2 1 1 1 = 1 1 1 1 1 1 
+                                  ^ (D)
+
+After using rule: D 1 1 D right
+1 1 1 1 + 1 1 2 1 1 1 = 1 1 1 1 1 1 _ 
+                                    ^ (D)
+
+After using rule: D _ 1 B left
+1 1 1 1 + 1 1 2 1 1 1 = 1 1 1 1 1 1 1 
+                                  ^ (B)
+
+After using rule: B 1 1 B left
+1 1 1 1 + 1 1 2 1 1 1 = 1 1 1 1 1 1 1 
+                                ^ (B)
+
+After using rule: B 1 1 B left
+1 1 1 1 + 1 1 2 1 1 1 = 1 1 1 1 1 1 1 
+                              ^ (B)
+
+After using rule: B 1 1 B left
+1 1 1 1 + 1 1 2 1 1 1 = 1 1 1 1 1 1 1 
+                            ^ (B)
+
+After using rule: B 1 1 B left
+1 1 1 1 + 1 1 2 1 1 1 = 1 1 1 1 1 1 1 
+                          ^ (B)
+
+After using rule: B 1 1 B left
+1 1 1 1 + 1 1 2 1 1 1 = 1 1 1 1 1 1 1 
+                        ^ (B)
+
+After using rule: B 1 1 B left
+1 1 1 1 + 1 1 2 1 1 1 = 1 1 1 1 1 1 1 
+                      ^ (B)
+
+After using rule: B = = B left
+1 1 1 1 + 1 1 2 1 1 1 = 1 1 1 1 1 1 1 
+                    ^ (B)
+
+After using rule: B 1 1 B left
+1 1 1 1 + 1 1 2 1 1 1 = 1 1 1 1 1 1 1 
+                  ^ (B)
+
+After using rule: B 1 1 B left
+1 1 1 1 + 1 1 2 1 1 1 = 1 1 1 1 1 1 1 
+                ^ (B)
+
+After using rule: B 1 1 B left
+1 1 1 1 + 1 1 2 1 1 1 = 1 1 1 1 1 1 1 
+              ^ (B)
+
+After using rule: B 2 1 G right
+1 1 1 1 + 1 1 1 1 1 1 = 1 1 1 1 1 1 1 
+                ^ (G)
+
+After using rule: G 1 2 A right
+1 1 1 1 + 1 1 1 2 1 1 = 1 1 1 1 1 1 1 
+                  ^ (A)
+
+After using rule: A 1 1 A right
+1 1 1 1 + 1 1 1 2 1 1 = 1 1 1 1 1 1 1 
+                    ^ (A)
+
+After using rule: A 1 1 A right
+1 1 1 1 + 1 1 1 2 1 1 = 1 1 1 1 1 1 1 
+                      ^ (A)
+
+After using rule: A = = D right
+1 1 1 1 + 1 1 1 2 1 1 = 1 1 1 1 1 1 1 
+                        ^ (D)
+
+After using rule: D 1 1 D right
+1 1 1 1 + 1 1 1 2 1 1 = 1 1 1 1 1 1 1 
+                          ^ (D)
+
+After using rule: D 1 1 D right
+1 1 1 1 + 1 1 1 2 1 1 = 1 1 1 1 1 1 1 
+                            ^ (D)
+
+After using rule: D 1 1 D right
+1 1 1 1 + 1 1 1 2 1 1 = 1 1 1 1 1 1 1 
+                              ^ (D)
+
+After using rule: D 1 1 D right
+1 1 1 1 + 1 1 1 2 1 1 = 1 1 1 1 1 1 1 
+                                ^ (D)
+
+After using rule: D 1 1 D right
+1 1 1 1 + 1 1 1 2 1 1 = 1 1 1 1 1 1 1 
+                                  ^ (D)
+
+After using rule: D 1 1 D right
+1 1 1 1 + 1 1 1 2 1 1 = 1 1 1 1 1 1 1 
+                                    ^ (D)
+
+After using rule: D 1 1 D right
+1 1 1 1 + 1 1 1 2 1 1 = 1 1 1 1 1 1 1 _ 
+                                      ^ (D)
+
+After using rule: D _ 1 B left
+1 1 1 1 + 1 1 1 2 1 1 = 1 1 1 1 1 1 1 1 
+                                    ^ (B)
+
+After using rule: B 1 1 B left
+1 1 1 1 + 1 1 1 2 1 1 = 1 1 1 1 1 1 1 1 
+                                  ^ (B)
+
+After using rule: B 1 1 B left
+1 1 1 1 + 1 1 1 2 1 1 = 1 1 1 1 1 1 1 1 
+                                ^ (B)
+
+After using rule: B 1 1 B left
+1 1 1 1 + 1 1 1 2 1 1 = 1 1 1 1 1 1 1 1 
+                              ^ (B)
+
+After using rule: B 1 1 B left
+1 1 1 1 + 1 1 1 2 1 1 = 1 1 1 1 1 1 1 1 
+                            ^ (B)
+
+After using rule: B 1 1 B left
+1 1 1 1 + 1 1 1 2 1 1 = 1 1 1 1 1 1 1 1 
+                          ^ (B)
+
+After using rule: B 1 1 B left
+1 1 1 1 + 1 1 1 2 1 1 = 1 1 1 1 1 1 1 1 
+                        ^ (B)
+
+After using rule: B 1 1 B left
+1 1 1 1 + 1 1 1 2 1 1 = 1 1 1 1 1 1 1 1 
+                      ^ (B)
+
+After using rule: B = = B left
+1 1 1 1 + 1 1 1 2 1 1 = 1 1 1 1 1 1 1 1 
+                    ^ (B)
+
+After using rule: B 1 1 B left
+1 1 1 1 + 1 1 1 2 1 1 = 1 1 1 1 1 1 1 1 
+                  ^ (B)
+
+After using rule: B 1 1 B left
+1 1 1 1 + 1 1 1 2 1 1 = 1 1 1 1 1 1 1 1 
+                ^ (B)
+
+After using rule: B 2 1 G right
+1 1 1 1 + 1 1 1 1 1 1 = 1 1 1 1 1 1 1 1 
+                  ^ (G)
+
+After using rule: G 1 2 A right
+1 1 1 1 + 1 1 1 1 2 1 = 1 1 1 1 1 1 1 1 
+                    ^ (A)
+
+After using rule: A 1 1 A right
+1 1 1 1 + 1 1 1 1 2 1 = 1 1 1 1 1 1 1 1 
+                      ^ (A)
+
+After using rule: A = = D right
+1 1 1 1 + 1 1 1 1 2 1 = 1 1 1 1 1 1 1 1 
+                        ^ (D)
+
+After using rule: D 1 1 D right
+1 1 1 1 + 1 1 1 1 2 1 = 1 1 1 1 1 1 1 1 
+                          ^ (D)
+
+After using rule: D 1 1 D right
+1 1 1 1 + 1 1 1 1 2 1 = 1 1 1 1 1 1 1 1 
+                            ^ (D)
+
+After using rule: D 1 1 D right
+1 1 1 1 + 1 1 1 1 2 1 = 1 1 1 1 1 1 1 1 
+                              ^ (D)
+
+After using rule: D 1 1 D right
+1 1 1 1 + 1 1 1 1 2 1 = 1 1 1 1 1 1 1 1 
+                                ^ (D)
+
+After using rule: D 1 1 D right
+1 1 1 1 + 1 1 1 1 2 1 = 1 1 1 1 1 1 1 1 
+                                  ^ (D)
+
+After using rule: D 1 1 D right
+1 1 1 1 + 1 1 1 1 2 1 = 1 1 1 1 1 1 1 1 
+                                    ^ (D)
+
+After using rule: D 1 1 D right
+1 1 1 1 + 1 1 1 1 2 1 = 1 1 1 1 1 1 1 1 
+                                      ^ (D)
+
+After using rule: D 1 1 D right
+1 1 1 1 + 1 1 1 1 2 1 = 1 1 1 1 1 1 1 1 _ 
+                                        ^ (D)
+
+After using rule: D _ 1 B left
+1 1 1 1 + 1 1 1 1 2 1 = 1 1 1 1 1 1 1 1 1 
+                                      ^ (B)
+
+After using rule: B 1 1 B left
+1 1 1 1 + 1 1 1 1 2 1 = 1 1 1 1 1 1 1 1 1 
+                                    ^ (B)
+
+After using rule: B 1 1 B left
+1 1 1 1 + 1 1 1 1 2 1 = 1 1 1 1 1 1 1 1 1 
+                                  ^ (B)
+
+After using rule: B 1 1 B left
+1 1 1 1 + 1 1 1 1 2 1 = 1 1 1 1 1 1 1 1 1 
+                                ^ (B)
+
+After using rule: B 1 1 B left
+1 1 1 1 + 1 1 1 1 2 1 = 1 1 1 1 1 1 1 1 1 
+                              ^ (B)
+
+After using rule: B 1 1 B left
+1 1 1 1 + 1 1 1 1 2 1 = 1 1 1 1 1 1 1 1 1 
+                            ^ (B)
+
+After using rule: B 1 1 B left
+1 1 1 1 + 1 1 1 1 2 1 = 1 1 1 1 1 1 1 1 1 
+                          ^ (B)
+
+After using rule: B 1 1 B left
+1 1 1 1 + 1 1 1 1 2 1 = 1 1 1 1 1 1 1 1 1 
+                        ^ (B)
+
+After using rule: B 1 1 B left
+1 1 1 1 + 1 1 1 1 2 1 = 1 1 1 1 1 1 1 1 1 
+                      ^ (B)
+
+After using rule: B = = B left
+1 1 1 1 + 1 1 1 1 2 1 = 1 1 1 1 1 1 1 1 1 
+                    ^ (B)
+
+After using rule: B 1 1 B left
+1 1 1 1 + 1 1 1 1 2 1 = 1 1 1 1 1 1 1 1 1 
+                  ^ (B)
+
+After using rule: B 2 1 G right
+1 1 1 1 + 1 1 1 1 1 1 = 1 1 1 1 1 1 1 1 1 
+                    ^ (G)
+
+After using rule: G 1 2 A right
+1 1 1 1 + 1 1 1 1 1 2 = 1 1 1 1 1 1 1 1 1 
+                      ^ (A)
+
+After using rule: A = = D right
+1 1 1 1 + 1 1 1 1 1 2 = 1 1 1 1 1 1 1 1 1 
+                        ^ (D)
+
+After using rule: D 1 1 D right
+1 1 1 1 + 1 1 1 1 1 2 = 1 1 1 1 1 1 1 1 1 
+                          ^ (D)
+
+After using rule: D 1 1 D right
+1 1 1 1 + 1 1 1 1 1 2 = 1 1 1 1 1 1 1 1 1 
+                            ^ (D)
+
+After using rule: D 1 1 D right
+1 1 1 1 + 1 1 1 1 1 2 = 1 1 1 1 1 1 1 1 1 
+                              ^ (D)
+
+After using rule: D 1 1 D right
+1 1 1 1 + 1 1 1 1 1 2 = 1 1 1 1 1 1 1 1 1 
+                                ^ (D)
+
+After using rule: D 1 1 D right
+1 1 1 1 + 1 1 1 1 1 2 = 1 1 1 1 1 1 1 1 1 
+                                  ^ (D)
+
+After using rule: D 1 1 D right
+1 1 1 1 + 1 1 1 1 1 2 = 1 1 1 1 1 1 1 1 1 
+                                    ^ (D)
+
+After using rule: D 1 1 D right
+1 1 1 1 + 1 1 1 1 1 2 = 1 1 1 1 1 1 1 1 1 
+                                      ^ (D)
+
+After using rule: D 1 1 D right
+1 1 1 1 + 1 1 1 1 1 2 = 1 1 1 1 1 1 1 1 1 
+                                        ^ (D)
+
+After using rule: D 1 1 D right
+1 1 1 1 + 1 1 1 1 1 2 = 1 1 1 1 1 1 1 1 1 _ 
+                                          ^ (D)
+
+After using rule: D _ 1 B left
+1 1 1 1 + 1 1 1 1 1 2 = 1 1 1 1 1 1 1 1 1 1 
+                                        ^ (B)
+
+After using rule: B 1 1 B left
+1 1 1 1 + 1 1 1 1 1 2 = 1 1 1 1 1 1 1 1 1 1 
+                                      ^ (B)
+
+After using rule: B 1 1 B left
+1 1 1 1 + 1 1 1 1 1 2 = 1 1 1 1 1 1 1 1 1 1 
+                                    ^ (B)
+
+After using rule: B 1 1 B left
+1 1 1 1 + 1 1 1 1 1 2 = 1 1 1 1 1 1 1 1 1 1 
+                                  ^ (B)
+
+After using rule: B 1 1 B left
+1 1 1 1 + 1 1 1 1 1 2 = 1 1 1 1 1 1 1 1 1 1 
+                                ^ (B)
+
+After using rule: B 1 1 B left
+1 1 1 1 + 1 1 1 1 1 2 = 1 1 1 1 1 1 1 1 1 1 
+                              ^ (B)
+
+After using rule: B 1 1 B left
+1 1 1 1 + 1 1 1 1 1 2 = 1 1 1 1 1 1 1 1 1 1 
+                            ^ (B)
+
+After using rule: B 1 1 B left
+1 1 1 1 + 1 1 1 1 1 2 = 1 1 1 1 1 1 1 1 1 1 
+                          ^ (B)
+
+After using rule: B 1 1 B left
+1 1 1 1 + 1 1 1 1 1 2 = 1 1 1 1 1 1 1 1 1 1 
+                        ^ (B)
+
+After using rule: B 1 1 B left
+1 1 1 1 + 1 1 1 1 1 2 = 1 1 1 1 1 1 1 1 1 1 
+                      ^ (B)
+
+After using rule: B = = B left
+1 1 1 1 + 1 1 1 1 1 2 = 1 1 1 1 1 1 1 1 1 1 
+                    ^ (B)
+
+After using rule: B 2 1 G right
+1 1 1 1 + 1 1 1 1 1 1 = 1 1 1 1 1 1 1 1 1 1 
+                      ^ (G)
+
+After using rule: G = = halt stay
+1 1 1 1 + 1 1 1 1 1 1 = 1 1 1 1 1 1 1 1 1 1 
+                      ^ (halt)
+
+Final: 
+1 1 1 1 + 1 1 1 1 1 1 = 1 1 1 1 1 1 1 1 1 1 
+halt
+Number of steps 240

@@ -1,0 +1,121 @@
+Operation started at: Mon Nov 13 14:02:46 2023
+
+Connected at Mon Nov 13 14:02:46 2023
+
+Send complete at Mon Nov 13 14:02:46 2023
+
+HTTP/1.1 200 OK
+Date: Mon, 13 Nov 2023 22:02:47 GMT
+Server: Apache/2.4.48 (Unix) OpenSSL/1.1.1n
+X-Powered-By: Express
+Connection: close
+Transfer-Encoding: chunked
+
+60
+<html><head><title>DigiPen CS 260 Delayed Response Test</title></head><body><h2>Here we go!</h2>
+5
+1<br>
+5
+2<br>
+5
+3<br>
+5
+4<br>
+5
+5<br>
+5
+6<br>
+5
+7<br>
+5
+8<br>
+5
+9<br>
+6
+10<br>
+6
+11<br>
+6
+12<br>
+6
+13<br>
+6
+14<br>
+6
+15<br>
+6
+16<br>
+6
+17<br>
+6
+18<br>
+6
+19<br>
+6
+20<br>
+6
+21<br>
+6
+22<br>
+6
+23<br>
+6
+24<br>
+6
+25<br>
+6
+26<br>
+6
+27<br>
+6
+28<br>
+6
+29<br>
+6
+30<br>
+6
+31<br>
+6
+32<br>
+6
+33<br>
+6
+34<br>
+6
+35<br>
+6
+36<br>
+6
+37<br>
+6
+38<br>
+6
+39<br>
+6
+40<br>
+6
+41<br>
+6
+42<br>
+6
+43<br>
+6
+44<br>
+6
+45<br>
+6
+46<br>
+6
+47<br>
+6
+48<br>
+6
+49<br>
+6
+50<br>
+20
+<h2>All done!</h2></body></html>
+0
+
+Operation completed at: Mon Nov 13 14:02:52 2023
+

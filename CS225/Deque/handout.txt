@@ -1,0 +1,157 @@
+Regular C array (as well as C++ std::vector) can add a new value in the end
+very efficiently, but adding value in the front is much slower - first
+you have to shift all element of the vector one position to the right to
+free up a position:
+// assuming there is enough allocated memory:
+for ( int i = 0; i < size; ++i ) {
+    int pos = size - i;
+    a[pos] = a[pos-1]; // shift right
+}
+a[0] = new_value;
+
+Another datastructure - circular array - allows efficinet insert at both ends.
+The idea is that the first element does not have to be at the beginning of the memory bloc, but anywhere:
+
+   | end index         | begin index
+   V                   V
+ 67                    012345  <--- logical indices  - index in data structure
++----------------------------+
+|gh                    abcdef| <--- values
++----------------------------+
+           111111111122222222
+ 0123456789012345678901234567  <--- raw indices - index in raw memory
+
+Examples:
+1) to insert Z in the end - as before,  write Z at position "end" and shift end index right by 1:
+a[e] = new_value;
+++e;
+
+    | end index        | begin index
+    V                  V
+ 678                   012345  <--- logical indices  - index in data structure
++----------------------------+
+|ghZ                   abcdef| <--- values
++----------------------------+
+           111111111122222222
+ 0123456789012345678901234567  <--- raw indices - index in raw memory
+
+
+2) to insert Y in front,  write Y at position "begin" and shift end index left by 1:
+a[b] = new_value;
+--b;
+    | end index       | begin index
+    V                 V
+ 789                  0123456  <--- logical indices  - index in data structure
++----------------------------+
+|ghZ                  Yabcdef| <--- values
++----------------------------+
+           111111111122222222
+ 0123456789012345678901234567  <--- raw indices - index in raw memory
+
+3) example above did not pay attention to "wrap around". What is the value at index (logical) 9:
+incorrect attempt: return a[ b+9 ];
+b+9 is outside of memory block. We had to wrap around (circular array):
+    a[ (b+9)%27 ];
+where 27 is the size of memory - capacity.
+
+Notes:
+
+1) remember that 
+(b-1)%capacity;
+may be not what you want (negative), use 
+(b+capacity-1)%capacity;
+
+2) you will need to support dynamic reallocation - if you want to insert an element,
+but you are out of memory - double capacity and reallocate:
+
+STARTING POSITION:
+-----------------
+size = 10, capacity = 12
+    e b
+    | | 
+    V V
+ 789  0123456  <--- logical indices 
++------------+
+|hkl  abcdefg| <--- values
++------------+
+           11
+ 012345678901
+
+INSERT X IN THE END 
+-----------------
+size = 11, capacity = 12
+     eb
+     || 
+     VV
+ 789A 0123456  <--- logical indices  A=10
++------------+
+|hklX abcdefg| <--- values
++------------+
+           11
+ 012345678901
+
+
+INSERT Y IN THE END 
+-----------------
+size = 12, capacity = 12
+      b=e
+      | 
+      V
+ 789AB0123456  <--- logical indices 
++------------+
+|hklXYabcdefg| <--- values
++------------+
+           11
+ 012345678901
+
+Note that b will be equal to e when size reaches the capacity.
+
+Do not reallocate if array is full - wait for the next insert.
+
+INSERT Z IN THE END 
+-----------------
+size = 12, capacity = 12
+      b=e
+      | 
+      V
+ 789AB0123456  <--- logical indices 
++------------+
+|hklXYabcdefg| <--- values
++------------+
+           11
+ 012345678901
+
+Reallocate:
+ - create a new memory block of size 12*2=24
+ - copy data
+ - delete old
+
+New memory, when copying you may start (b) wherever you want (see comment A).
+Make b=0 in the new array - for the grading purposes:
+ b           e
++------------------------+
+|abcdefghklXY            | <--- values
++------------------------+
+           11111111112222
+ 012345678901234567890123
+
+
+3) you will also need to reallocate to smaller capacity when size is less than 
+the quarter of the capacity.
+
+
+Comment:
+A) the next 3 circular arrays are logically equivalent:
+    e b                e b                e         b
+    | |                | |                |         | 
+    V V                V V                V         V
+ 789  0123456         9  012345678        0123456789
++------------+       +------------+      +------------+
+|hkl  abcdefg|       |l  abcdefghk|      |abcdefghkl  |
++------------+       +------------+      +------------+
+
+
+Implement double ended array - an array that supports efficient insert on
+both ends.
+
+

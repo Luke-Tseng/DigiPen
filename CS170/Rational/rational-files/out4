@@ -1,0 +1,18 @@
+pi_1 and pi_2 are not equal
+pi_2 and pi_3 are not equal
+pi_1 and pi_3 are not equal
+pi_1 and pi_2 are not equal
+pi_2 and pi_3 are not equal
+pi_1 and pi_3 are not equal
+pi_1 is not less than pi_2
+pi_1 is not less than pi_3
+pi_2 is not less than pi_3
+pi_1 is greater than pi_2
+pi_1 is greater than pi_3
+pi_2 is greater than pi_3
+pi_1 is not less or equal than pi_2
+pi_1 is not less or equal than pi_3
+pi_2 is not less or equal than pi_3
+pi_1 is greater or equal than pi_2
+pi_1 is greater or equal than pi_3
+pi_2 is greater or equal than pi_3

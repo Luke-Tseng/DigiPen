@@ -1,0 +1,15 @@
+Given a string of As and Bs (no other characters are allowed), replace all
+occurrences of AB with XYZ (you have to shift characters to the right of the
+replace position)
+
+See examples in driver.cpp and corresponding out files.
+
+Your program should terminate with a "halt".
+
+Test code on 
+http://morphett.info/turing/turing.html
+
+Read "syntax.txt" to check the differences between morphett.info and my simulator (wild-card and duplicate rules treatment).
+
+Submit on pontus.
+

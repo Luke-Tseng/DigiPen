@@ -1,0 +1,63 @@
+Templetize Deque class from the previous lab.
+
+Notes:
+1)  Deque template will NOT allow copying and assignments "across" instantiations.
+    I.e. the following does not compile:
+    Deque<int> di; 
+    Deque<double> dd( di ); // copy construct Deque<double> from Deque<int> 
+
+    Ability to copy and assign "across" instantiations is actually quite useful,
+    all STL containers can do that. We will explore that feature in another lab.
+
+2)  Notice that in some places you can say "Deque" and compiler understands
+    that you actually mean "Deque<T>", but sometime you have to be precise 
+    and say "Deque<T>" yourself:
+
+foo.h - header
++-------------------------------------
+|#ifndef FOO_H
+|#define FOO_H
+|template< typename T > 
+|class Foo {
+|   public:
+|       Foo(); // OK
+|       Foo<T>(int); // OK
+|       Foo operator+( Foo const& op2 ); // OK - both return type and 2nd argument
+|       Foo operator+( Foo<T> const& op2 ); // OK - both 
+|       Foo<T> operator+( Foo const& op2 ); // OK - both 
+|       Foo<T> operator+( Foo<T> const& op2 ); // OK - both 
+|};                                     
+|#include "foo.cpp" - see class notes
+|#endif
++----------------------------------------
+
+foo.cpp - implementation, do not compile:
+it is included from header
++-------------------------------------
+|template< typename T > 
+|Foo<T>::Foo() {     // OK
+|                                     
+|template< typename T > 
+|Foo::Foo() {        // error: invalid use of template-name ... without an argument list
+|}                                     
+|template< typename T > 
+|Foo<T>::Foo<T>() {  // error: Foo has no template constructors
+|}                                     
+|template< typename T > 
+|Foo<T> Foo<T>::operator+( Foo const& op2 ) { // OK
+|   Foo ret_val .... // OK
+|   Foo<T> tmp ....  // OK  
+|}                                     
+|template< typename T > 
+|Foo<T> Foo<T>::operator+( Foo<T> const& op2 ) { // OK
+|}                                     
+|template< typename T > 
+|Foo Foo<T>::operator+( Foo const& op2 ) { // error: invalid use of template-name ... without an argument list
+|}                                     
++----------------------------------------
+
+Some rules:
+- if you are inside class declaration or method implementation, compiler understands Foo as Foo<T> (both are correct)
+- otherwise you have to use Foo<T>: for example 
+    - in fully qualified names for methods: ...... Foo<T>::operator+ ......
+    - when specifying return type:          Foo<T> Foo<T>::operator+ ......

@@ -1,0 +1,31 @@
+
+
+GCC=gcc
+
+GCCFLAGS=-ansi -Wall -Wextra -pedantic -Wmissing-prototypes -Wdeclaration-after-statement -O3
+
+VALGRIND_OPTIONS=-q --leak-check=full
+DIFF_OPTIONS=-y --strip-trailing-cr --suppress-common-lines
+
+OSTYPE := $(shell uname)
+ifeq ($(OSTYPE),Linux)
+CYGWIN=
+else
+CYGWIN=-Wl,--enable-auto-import
+endif
+
+OBJECTS0= tddaa.c
+DRIVER0=driver.c
+
+gcc0:
+	$(GCC) -o $(PRG) $(DRIVER0) $(OBJECTS0) $(GCCFLAGS) 
+0 1:
+	echo "running test$@"
+	watchdog 200 ./$(PRG) $@ >studentout$@
+	diff out$@ studentout$@ $(DIFF_OPTIONS) > difference$@
+mem0 mem1:
+	echo "running memory test $@"
+	watchdog 2000 valgrind $(VALGRIND_OPTIONS) ./$(PRG) $(subst mem,,$@) 1>/dev/null 2>difference$@
+clean:
+	rm -f *.exe *.o 
+

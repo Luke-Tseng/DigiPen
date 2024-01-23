@@ -1,0 +1,82 @@
+Bubble sort
+==========
+
+The idea of bubble sort is:
+for n-1 passes
+    scan left-to-right
+        swap if 2 adjacent elements are not in order 
+
+Example:
+5 1 2 3 4:
+first pass:
+    5-1 2 3 4
+    1 5-2 3 4
+    1 2 5-3 4
+    1 2 3 5-4
+    1 2 3 4 5
+second and subsequent passes to not do anything (see below how to optimize)
+
+The previous example shows why sort is called bubble sort.
+
+Another example:
+3 1 5 4 2
+first pass:
+3-1 5 4 2 ( "-" shows which 2 elements will be swapped)
+1 3.5 4 2 ( 3 and 5 are in the right order, no swap, I used "." to show no swap)
+1 3 5-4 2 ( notice how bubble has changed from pushing 3 up to pushing 5)
+1 3 4 5-2 
+1 3 4 2 5
+second pass:
+1.3 4 2 5
+1 3.4 2 5
+1 3 4-2 5
+1 3 2 4.5
+third pass:
+1.3 2 4 5
+1 3-2 4 5
+1 2 3.4 5
+1 2 3 4.5
+pass 4 does nothing - done.
+
+Notes:
+P1) After the first pass the largest element will be placed at the last 
+    position. And will never move again.
+    In the same manner - during i'th itereation (of the outer loop) the i'th
+    largest element will be placed in the right (correct) position.
+P2) Consequence: after i'th iteration the last i positions of the array
+    are sorted and contain i largest element. 
+P3) Algorithm may skip i last positions (in the inner loop) during i'th 
+    iteration (of the outer loop).
+
+Optimized version:
+for i in 0..n-1 (inclusively) 
+    for j in 0..n-i-2
+        swap if elements at positions j and j+1 are not in order
+
+Optimized version 2: 
+for i in 0..n-1 and (there were swap during last iteration)
+    for j in 0..n-i-2
+        swap if elements at positions j and j+1 are not in order
+// based on the fact that if during one of the passes 
+// there are no swap, there will be no swaps in the future (i.e. we are done)
+
+
+Another optimization is dealing with the inner loop: only scan till the last
+position that was modified in the previous iteration.
+
+for i in 0..n-1 and (there were swap during last iteration)
+    last_modified_position_by_prev_iteration = last_modified_position
+    for j in 0..last_modified_position_by_prev_iteration
+        swap if elements at positions j and j+1 are not in order
+        last_modified_position = j
+
+
+STL style implementation
+========================
+For this lab you will create STL style implementation using iterators. Note
+that since Bubble sort accesses elements in a left-to-right fashion, you only
+need a Forward iterator to implement it.  Which means that implementation will
+compile with random-access iterators (vector, deque), bidirectional (list),
+forward (forward_list - aka singly linked list). Note that std::sort
+(non-member function) will only compile with random access iterator, for
+std::list and std::forward_list you have to use method sort.

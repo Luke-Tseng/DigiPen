@@ -1,0 +1,33 @@
+Implement a class Rational representing a fraction. Model it after a built-in
+int, so that it supports arithmetic, comparison, conversion to a double.
+Use driver.cpp to figure out required functionality.
+
+Rational number is a fraction n/d (numerator/denominator), in general in
+mathematics both numerator and denominator may be positive or negative, 
+for example 1/(-2) and (-1)/2 are both legal (and also equal). For out
+implementation we will keep denominator always positive. So if we need 
+a negative fraction, we will need to make numerator negative. This adds
+a little extra work in the constructors, but will save some work in 
+comparison-like operators. Another requirement - numerator and denominator
+are relatively prime - which means the only common divisor is 1, otherwise
+we can "simplify" the fraction: 2/4 = 1/2, 12/18 = 2/3 etc. So:
+1) d > 0, but n may be negative
+2) GCD(n,d)=1 
+see code provided in rational-skeleton.cpp
+
+When implementing operators - avoid code repetition (duplication). See course 
+notes, but in short:
+Arithmetic:
+implement unary- (negation)
+implement += first, then +,-,-= using += and "unary-"
+implement *= first, then *
+implement /= first, then /
+Comparison:
+implement < and ==,
+implement <=, >, >=, != (see notes for the logic).
+
+Hide helper function in "private" - see GCD, CheckGCD, CheckSign.
+
+Pay attention to const-correctness. If function/method can accept a value 
+as const - do that, so client is allowed to have const arguments. 
+

@@ -1,0 +1,66 @@
+Turing Simulator object is constructed by providing a filename, corresponding file structure:
+
++-----------------------------------------------------------------------------+
+| ; comment                                                                   |
+| initial state S ; "S" is an example, any string (no whitespace) will work   |
+| ; comment                                                                   |
+| rule ; comment                                                              |
+| rule                                                                        |
+|      ; comment line                                                         |
+| ...                                                                         |
+| rule                                                                        |
+| rule                                                                        |
++-----------------------------------------------------------------------------+
+
+
+Each rule line has to have a 5-tuple of the form:
+    <current state> <current symbol> <new symbol> <direction> <new state>
+
+state       std::string
+symbol      char
+direction   one of l,L,r,R
+
+Only one rule per line. 
+
+Using '*':
+    in current state or symbol - ALL
+    in new     state or symbol - SAME AS CURRENT (do not modify)
+    in direction               - STAY (do not move)
+
+Anything after a ';' is a comment and is ignored.
+
+The machine stops if
+    when it reaches any state starting with 'halt', eg. halt, halt-accept.
+    when no rule is matching            - considered error
+    when multiple rules are matching    - considered error
+
+Space is equivalent to underscore.
+
+Example:
+initial state A
+A 1 1 r A
+A _ _ * halt
+
+which is designed to find the end of a group of 1's on the tape.
+
+To run - call method "run", argument is the initial state of the tape:
+run( "11111" );
+run( "11111__" ); // equivalent to above - default value of the infinite tape is underscore (blank).
+
+Initial position of the caret (reading head) is under the first symbol of the input. Therefore 
+run( "___11111" );
+is different run from the two above since initial caret position is different.
+
+This simulator uses the same syntax (mostly) as 
+http://morphett.info/turing/turing.html
+the above page may be useful for development.
+
+There is a difference: morphett.info will allow multiple rules that match the same (symbol,state). 
+Not sure what it does - looks like it grabs the last rule that matches. My simulator will throw.
+See Deterministic Turing Machine definition.
+
+Duplicate rules in morphett.info
+A 1 1 r A
+A * * l B
+since '*' is a wild card, second rule can be instatiated for 1, giving 2 rules "A 1". Not sure how 
+morphett deals with this - may be "instatiation" is lower priority.

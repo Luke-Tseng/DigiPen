@@ -1,0 +1,40 @@
+
+The task is to implement a class named ObjectAllocator which will be used to allocate and deallocate fixed-sized memory 
+blocks for a client. The public interface for the ObjectAllocator class is very simple, almost trivial. In addition to the public 
+constructor (and destructor), there are essentially only 2 public methods that the client requires. These are Allocate and Free. As 
+far as the client is concerned, these methods replace the C++ new and delete operators, respectively. There are several other 
+public methods that are present to help aid in testing, debugging, and measuring your free list management.
+
+1. There is a structure called OAConfig which contains the configuration parameters for the ObjectAllocator. You should
+not need to modify this.
+2. There is a structure called OAStats which contains the statistical data for the ObjectAllocator. Do not modify this.
+3. Setting MaxPages to 0 effectively sets the maximum to unlimited (limited only by what new can allocate)
+4. The DebugOn_ field is a boolean that determines whether or not the debugging routines are enabled. The default is
+false, which means that no checking is performed. When true, the memory allocated has certain values and depends on
+the current status of the memory (e.g. unallocated, allocated, freed, or padding). These values are specified in the
+header file on the web page for this assignment. Also, if DebugOn_ is true, validation during calls to Free is enabled
+(checking for double-frees, corruption, page boundaries, etc.)
+5. The UseCPPMemManager_ field is a flag that will enable/disable the memory management system. Specifically, it
+allows you to use the C++ new and delete operators directly. (Effectively bypassing all memory management you’ve
+written.) With this flag enabled, you will only be able to count the total allocations/deallocations and the most objects in
+use at any one time. The other counts are undefined and should be ignored (e.g. pages in use).
+6. The PadBytes_ field is the number of bytes that you will “pad” before and after the each block that is given to the
+client. These bytes are used to detect memory overruns and underruns.
+7. There is a struct in the implementation file called GenericObject, to help with the implementation (casting).
+8. The exception class is provided and should not be modified.
+9. There are several public methods for testing/debugging the ObjectAllocator. These will also help you in creating
+flexible driver programs and to test your implementation.
+10. The DumpMemoryInUse method returns the number of blocks in use by the client.
+11. The FreeEmptyPages method returns the number of pages that were freed.
+12. The ValidatePages method returns the number of blocks that are corrupted. Only pad bytes are validated.
+13. When checking for boundaries, your code should perform the operation in constant time. This means you don't need to
+“walk” through the page to determine if the block is at the proper boundary. (Hint: Use the modulus operator: %)
+14. Since you're dealing with raw memory, it is natural that you will need to cast between pointers of different types. You
+must use the C++ named cast (e.g. reinterpret_cast). Do not use the old, unnamed casting. See the sample
+driver for examples. Also, look up -Wold-style-cast for GNU's compilers to help you find these old C-style
+casts. The graded drivers will be using this. Please don't receive a 0 because you failed to read this handout and follow
+directions.
+15. When using new to allocate memory, you must wrap it in a try/catch block. Do not use std::nothrow. If you don't
+know what that is, then you're probably not going to use it.
+16. Do not use void pointers. In other words, do not create any members or variables of type: void *. They are
+unnecessary and will complicate your code with lots of unnecessary casting.
