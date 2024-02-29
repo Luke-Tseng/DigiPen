@@ -8,7 +8,8 @@ Semaphore::Semaphore(int count)
 void Semaphore::wait()
 {
     std::unique_lock<std::mutex> lock(m);
-    while (count == 0) {
+    while (count == 0)
+    {
         cv.wait(lock);
     }
     count--;
