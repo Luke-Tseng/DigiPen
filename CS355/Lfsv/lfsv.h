@@ -1,59 +1,119 @@
-#include <iostream>       // std::cout
-#include <atomic>         // std::atomic
-#include <thread>         // std::thread
-#include <vector>         // std::vector
-#include <deque>          // std::deque
-#include <mutex>          // std::mutex
+#include <iostream> // std::cout
+#include <atomic>	// std::atomic
+#include <thread>	// std::thread
+#include <vector>	// std::vector
+#include <deque>	// std::deque
+#include <mutex>	// std::mutex
 
-struct Pair {
-    std::vector<int>* pointer;
-    long              ref_count;
+struct Pair
+{
+	std::vector<int> *pointer;
+	long ref_count;
 }; // __attribute__((aligned(16),packed));
 // for some compilers alignment needed to stop std::atomic<Pair>::load to segfault
 
-class LFSV {
-    std::atomic< Pair > pdata;
-    public:
+std::atomic<int> counter(0);
 
-    LFSV() : pdata( Pair{ new std::vector<int>, 1 } ) {
-//        std::cout << "Is lockfree " << pdata.is_lock_free() << std::endl;
-    }   
+class MemoryBank
+{
+private:
+	std::deque<std::vector<int> *> bank;
+	std::mutex m;
 
-    ~LFSV() { 
-        Pair temp = pdata.load();
-        std::vector<int>* p = temp.pointer;
-        delete p;
-    }
+public:
+	MemoryBank() : bank(1000)
+	{
+		for (int i = 0; i < 1000; ++i)
+		{
+			bank[i] =
+				reinterpret_cast<std::vector<int> *>(new char[sizeof(std::vector<int>)]);
+		}
+	}
 
-    void Insert( int const & v ) {
-        Pair pdata_new, pdata_old;
-        pdata_new.pointer  = nullptr;
-        do {
-            delete pdata_new.pointer;
-            pdata_old = pdata.load();
-            pdata_new.pointer   = new std::vector<int>( *pdata_old.pointer ); // pdata_old may be deleted
+	~MemoryBank()
+	{
+		for (auto &el : bank)
+		{
+			delete[] reinterpret_cast<char *>(el);
+		}
+	}
 
-            // working on a local copy
-            std::vector<int>::iterator b = pdata_new.pointer->begin();
-            std::vector<int>::iterator e = pdata_new.pointer->end();
-            if ( b==e || v>=pdata_new.pointer->back() ) { pdata_new.pointer->push_back( v ); } //first in empty or last element
-            else {
-                for ( ; b!=e; ++b ) {
-                    if ( *b >= v ) {
-                        pdata_new.pointer->insert( b, v );
-                        break;
-                    }
-                }
-            }
+	std::vector<int> *Get()
+	{
+		std::lock_guard<std::mutex> lock(m);
+		std::vector<int> *p = bank[0];
+		bank.pop_front();
+		return p;
+	}
 
-        } while ( !(this->pdata).compare_exchange_weak( pdata_old, pdata_new  ));
-        delete pdata_old.pointer;
-    }
+	void Store(std::vector<int> *p)
+	{
+		std::lock_guard<std::mutex> lock(m);
+		bank.push_back(p);
+	}
+};
+class LFSV
+{
+private:
+	MemoryBank mb;
+	std::atomic<std::vector<int> *> pdata;
+	std::mutex wr_mutex;
 
-    int operator[] ( int pos ) { // not a const method anymore
-        Pair pdata_new, pdata_old;
-//        std::cout << "Read from " << pdata_new.pointer;
-        int ret_val = (*pdata_new.pointer) [pos];
-        return ret_val;
-    }
+public:
+	LFSV() : mb(), pdata(new(mb.Get()) std::vector<int>),
+			 wr_mutex()
+	{
+	}
+
+	~LFSV()
+	{
+		pdata.load()->~vector();
+		mb.Store(pdata.load());
+	}
+
+	void Insert(int const &v)
+	{
+		std::vector<int> *pdata_new = nullptr, *pdata_old;
+		do
+		{
+			++counter;
+			// delete pdata_new;
+			if (pdata_new)
+			{
+				pdata_new->~vector();
+				mb.Store(pdata_new);
+			}
+
+			pdata_old = pdata;
+			pdata_new = new (mb.Get()) std::vector<int>(*pdata_old);
+			std::vector<int>::iterator b = pdata_new->begin();
+			std::vector<int>::iterator e = pdata_new->end();
+
+			// first in empty or last element
+			if (b == e || v >= pdata_new->back())
+			{
+				pdata_new->push_back(v);
+			}
+			else
+			{
+				for (; b != e; ++b)
+				{
+					if (*b >= v)
+					{
+						pdata_new->insert(b, v);
+						break;
+					}
+				}
+			}
+
+		} while (!(this->pdata).compare_exchange_weak(pdata_old, pdata_new));
+
+		pdata_old->~vector();
+		mb.Store(pdata_old);
+	}
+
+	int const &operator[](int pos) const
+	{
+		return (*pdata)[pos];
+	}
 };
