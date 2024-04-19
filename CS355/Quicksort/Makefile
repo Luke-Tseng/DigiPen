@@ -8,9 +8,9 @@ MSCFLAGS=/EHa /W4 /Za /Zc:forScope /nologo /D_CRT_SECURE_NO_DEPRECATE /D"_SECURE
 VALGRIND_OPTIONS=-q --leak-check=full
 DIFFLAGS=--strip-trailing-cr -y --suppress-common-lines 
 
-OBJECTS0=ratio.cpp
+OBJECTS0=hazard_pointers.cpp
 DRIVER0=driver.cpp
-DRIVER_D= driver-debugging.cpp
+DRIVER_D= driver.cpp
 
 OSTYPE := $(shell uname)
 ifeq ($(OSTYPE),Linux)
