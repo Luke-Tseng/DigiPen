@@ -15,7 +15,7 @@ data = np.array([
 ])
 
 # Split data into x and y
-x = data[:, :-1]
+x = np.c_[np.ones(data.shape[0]), data[:, :-1]]
 y = data[:, -1]
 
 # Initialize weights to 0
@@ -43,15 +43,15 @@ final_weights, num_iterations = pla(x, y, w)
 print("Final weights:", final_weights)
 print("Number of iterations:", num_iterations)
 
-# Create a dataset D with 20 points
+# Create a dataset of random points
 def generate_data(num_points):
     points = []
     while len(points) < num_points:
         x1 = np.random.randint(-5, 6)
         x2 = np.random.randint(-5, 6)
         if 2*x1 + 3*x2 != 1:  # Discard points on the line
-            label = 1 if 2*x1 + 3*x2 > 1 else -1
-            points.append((x1, x2, label))
+            sign = 1 if 2*x1 + 3*x2 > 1 else -1
+            points.append((1, x1, x2, sign))
     return np.array(points)
 
 data = generate_data(20)
