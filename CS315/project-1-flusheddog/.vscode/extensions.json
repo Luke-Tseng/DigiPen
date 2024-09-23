@@ -1,0 +1,25 @@
+{
+    "recommendations": [
+        "ms-vscode.cpptools",
+        "ms-vscode.cpptools-themes", 
+        "ms-vscode.cpptools-extension-pack",
+        "ms-vscode.cmake-tools",
+        "ms-vscode.cpptools-themes",
+        "ms-vscode.makefile-tools",
+        "ms-vscode-remote.remote-wsl",
+        "ms-vscode.remote-explorer",
+        "ms-vscode-remote.vscode-remote-extensionpack",
+        "ms-vscode.PowerShell",
+        "ms-vscode-remote.remote-containers",
+        "ms-vscode-remote.remote-ssh",
+        "ms-vscode-remote.remote-ssh-edit",
+        "ms-vscode-remote.vscode-remote-extensionpack",
+        "ms-azuretools.vscode-docker",
+        "visualstudioexptteam.vscodeintellicode",
+        "twxs.cmake",
+        "matepek.vscode-catch2-test-adapter",
+        "cschlosser.doxdocgen",
+        "yzhang.markdown-all-in-one",
+        "bierner.markdown-preview-github-styles",
+    ]
+  }

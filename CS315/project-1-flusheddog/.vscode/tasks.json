@@ -1,0 +1,41 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "make build intro-project",
+            "command": "make",
+            "args": [
+                "exe",
+                "CONFIGURATITON=DEBUG",
+                "--directory=${workspaceFolder}",
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build"
+        },
+        {
+            "type": "shell",
+            "label": "make build intro-project-test",
+            "command": "make",
+            "args": [
+                "test",
+                "CONFIGURATITON=DEBUG",
+                "--directory=${workspaceFolder}",
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build"
+        },
+    ]
+}

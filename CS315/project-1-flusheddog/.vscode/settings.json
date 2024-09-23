@@ -1,0 +1,16 @@
+{
+    "files.associations": {
+        "climits": "cpp",
+        "system_error": "cpp",
+        "cassert": "cpp",
+        "xlocale": "cpp"
+    },
+    "makefile.launchConfigurations": [
+        {
+            "cwd": "/mnt/c/Users/ryanc/Desktop/_/dev/digipen/CS180/project-intro-solution/bin",
+            "binaryPath": "/mnt/c/Users/ryanc/Desktop/_/dev/digipen/CS180/project-intro-solution/bin/intro-project",
+            "binaryArgs": []
+        }
+    ],
+    "C_Cpp.errorSquiggles": "disabled"
+}

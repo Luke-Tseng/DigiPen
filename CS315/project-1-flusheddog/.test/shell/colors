@@ -1,0 +1,61 @@
+_Orange="\e[38;5;166m"
+_Gray="\e[37m"
+_Blue="\e[34m"
+_Green="\e[92m"
+_Red="\e[91m"
+_White="\e[39m"
+_Yellow="\e[93m"
+_Cyan="\e[96m"
+_Magenta="\e[95m"
+
+_Bold="\e[1m"
+_Dim="\e[2m"
+_Underlined="\e[4m"
+_Blink="\e[5m"
+_Hidden="\e[8m"
+
+_Normal="\e[0m"
+
+function printOrange {
+    echo -e "$_Orange$1$_Normal"
+}
+function printGray {
+    echo -e "$_Gray$1$_Normal"
+}
+function printBlue {
+    echo -e "$_Blue$1$_Normal"
+}
+function printGreen {
+    echo -e "$_Green$1$_Normal"
+}
+function printRed {
+    echo -e "$_Red$1$_Normal"
+}
+function printWhite {
+    echo -e "$_White$1$_Normal"
+}
+function printYellow {
+    echo -e "$_Yellow$1$_Normal"
+}
+function printCyan {
+    echo -e "$_Cyan$1$_Normal"
+}
+function printMagenta {
+    echo -e "$_Magenta$1$_Normal"
+}
+
+function printBold {
+    echo -e "$_Bold$1$_Normal"
+}
+function printDim {
+    echo -e "$_Dim$1$_Normal"
+}
+function printUnderlined {
+    echo -e "$_Underlined$1$_Normal"
+}
+function printBlink {
+    echo -e "$_Blink$1$_Normal"
+}
+function printHidden {
+    echo -e "$_Hidden$1$_Normal"
+}
