@@ -5,7 +5,7 @@
 //
 // brief:	The menu shown when hosting a server, and waiting for a user
 //
-// Copyright © 2021 DigiPen, All rights reserved.
+// Copyright ï¿½ 2021 DigiPen, All rights reserved.
 //---------------------------------------------------------
 #include "HostingMenuState.h"
 #include "GameStateManager.h"

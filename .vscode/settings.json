@@ -82,6 +82,9 @@
         "xtree": "cpp",
         "xutility": "cpp",
         "readline.h": "c",
-        "string.h": "c"
+        "string.h": "c",
+        "complex": "cpp",
+        "hash_map": "cpp",
+        "hash_set": "cpp"
     }
 }

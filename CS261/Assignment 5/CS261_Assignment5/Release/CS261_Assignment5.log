@@ -1,0 +1,33 @@
+﻿  pch.cpp
+  Clock.cpp
+  DirectControl.cpp
+  OptimisticAttack.cpp
+  DeadReckoningControl.cpp
+  DoubleOrbitControl.cpp
+  DumbClientScenarioState.cpp
+  GameState.cpp
+  GameStateManager.cpp
+  LabMath.cpp
+  LockstepScenarioState.cpp
+  NetworkedScenarioState.cpp
+  OptimisticClientScenarioState.cpp
+  OptimisticHostScenarioState.cpp
+  Packet.cpp
+  PacketSerializer.cpp
+  Player.cpp
+  ScenarioState.cpp
+  SimpleSyncControl.cpp
+  SnapshotControl.cpp
+C:\Users\Luke\DigiPen\CS261\Assignment 5\CS261_Assignment5\SnapshotControl.cpp(34,100): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  (compiling source file '/SnapshotControl.cpp')
+  
+C:\Users\Luke\DigiPen\CS261\Assignment 5\CS261_Assignment5\SnapshotControl.cpp(57,17): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  (compiling source file '/SnapshotControl.cpp')
+  
+C:\Users\Luke\DigiPen\CS261\Assignment 5\CS261_Assignment5\SnapshotControl.cpp(72,17): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  (compiling source file '/SnapshotControl.cpp')
+  
+C:\Users\Luke\DigiPen\CS261\Assignment 5\CS261_Assignment5\SnapshotControl.cpp(96,14): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  (compiling source file '/SnapshotControl.cpp')
+  
+  CS261_Assignment5.vcxproj -> C:\Users\Luke\DigiPen\CS261\Assignment 5\Release\CS261_Assignment5.lib

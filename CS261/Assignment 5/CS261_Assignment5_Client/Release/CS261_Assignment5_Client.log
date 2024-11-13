@@ -1,0 +1,14 @@
+﻿  ClientConfiguration.cpp
+  ClientMainMenuState.cpp
+  CS261_Assignment5_Client.cpp
+  ConnectingMenuState.cpp
+  Generating code
+  Previous IPDB not found, fall back to full compilation.
+  All 578 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  CS261_Assignment5_Client.vcxproj -> C:\Users\Luke\DigiPen\CS261\Assignment 5\Release\CS261_Assignment5_Client.exe
+  'pwsh.exe' is not recognized as an internal or external command,
+  operable program or batch file.
+  1 File(s) copied
+  1 File(s) copied
+  1 File(s) copied

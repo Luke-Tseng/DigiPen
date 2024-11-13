@@ -15,7 +15,7 @@ data = np.array([
 ])
 
 # Split data into x and y
-x = np.c_[np.ones(data.shape[0]), data[:, :-1]]
+x = np.column_stack((np.ones(len(data)), data[:, :-1])) 
 y = data[:, -1]
 
 # Initialize weights to 0
