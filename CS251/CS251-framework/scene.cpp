@@ -112,7 +112,7 @@ Object* SphereOfSpheres(Shape* SpherePolygons)
 ////////////////////////////////////////////////////////////////////////
 // Constructs a -1...+1  quad (canvas) framed by four (elongated) boxes
 Object* FramedPicture(const glm::mat4& modelTr, const int objectId,
-	Shape* BoxPolygons, Shape* QuadPolygons)
+	Shape* BoxPolygons, Shape* QuadPolygons, Texture* texture)
 {
 	// This draws the frame as four (elongated) boxes of size +-1.0
 	float w = 0.05; // Width of frame boards.
@@ -129,7 +129,7 @@ Object* FramedPicture(const glm::mat4& modelTr, const int objectId,
 	frame->add(ob, Translate(-1.0 - w, 0.0, 0.0) * Scale(w, w, 1.0 + 2 * w));
 
 	ob = new Object(QuadPolygons, objectId,
-		woodColor, glm::vec3(0.0, 0.0, 0.0), 10.0);
+		woodColor, glm::vec3(0.0, 0.0, 0.0), 10.0, texture);
 	frame->add(ob, Rotate(0, 90));
 
 	return frame;
@@ -221,20 +221,27 @@ void Scene::InitializeScene()
 	// associate them with the various objects being created in the
 	// next dozen lines of code.
 
+	Texture* teapotTexture = new Texture("textures/cracks.png");
+	Texture* boxTexture = new Texture("textures/Brazilian_rosewood_pxr128.png");
+	Texture* floorTexture = new Texture("textures/6670-diffuse.jpg");
+	Texture* groundTexture = new Texture("textures/grass.jpg");
+	Texture* houseTexture = new Texture("textures/my-house-01.png");
+	Texture* roomTexture = new Texture("textures/Standard_red_pxr128.png");
+
 	// @@ To change an object's surface parameters (Kd, Ks, or alpha),
 	// modify the following lines.
 
 	central = new Object(NULL, nullId);
 	anim = new Object(NULL, nullId);
-	room = new Object(RoomPolygons, roomId, brickColor, black, 1);
-	floor = new Object(FloorPolygons, floorId, floorColor, black, 1);
-	teapot = new Object(TeapotPolygons, teapotId, brassColor, brightSpec, 120);
-	podium = new Object(BoxPolygons, boxId, glm::vec3(woodColor), polishedSpec, 10);
+	room = new Object(RoomPolygons, roomId, brickColor, black, 1, roomTexture);
+	floor = new Object(FloorPolygons, floorId, floorColor, black, 1, floorTexture);
+	teapot = new Object(TeapotPolygons, teapotId, brassColor, brightSpec, 120, teapotTexture);
+	podium = new Object(BoxPolygons, boxId, glm::vec3(woodColor), polishedSpec, 10, boxTexture);
 	sky = new Object(SpherePolygons, skyId, black, black, 0);
-	ground = new Object(GroundPolygons, groundId, grassColor, black, 1);
+	ground = new Object(GroundPolygons, groundId, grassColor, black, 1, groundTexture);
 	sea = new Object(SeaPolygons, seaId, waterColor, brightSpec, 120);
-	leftFrame = FramedPicture(Identity, lPicId, BoxPolygons, QuadPolygons);
-	rightFrame = FramedPicture(Identity, rPicId, BoxPolygons, QuadPolygons);
+	leftFrame = FramedPicture(Identity, lPicId, BoxPolygons, QuadPolygons, NULL);
+	rightFrame = FramedPicture(Identity, rPicId, BoxPolygons, QuadPolygons, houseTexture);
 	spheres = SphereOfSpheres(SpherePolygons);
 #ifdef REFL
 	spheres->drawMe = true;

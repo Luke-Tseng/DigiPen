@@ -33,6 +33,8 @@ uniform float shininess; // alpha exponent
 uniform vec3 light; // Ii
 uniform vec3 ambient; // Ia
 
+uniform sampler2D tex;
+uniform int hasTexture;
 
 void main()
 {
@@ -46,12 +48,49 @@ void main()
 	vec3 Ia = ambient;
 	float a = shininess;
 
+	vec2 uv = texCoord;
+
+	if(objectId == groundId)
+		uv *= 100.0;
+	if(objectId == roomId)
+		uv = uv.yx * 25.0;
+	if(objectId == boxId)
+		uv *= 2.0;
+	if(objectId == teapotId)
+		uv *= 2.5;
+
+	if (hasTexture == 1)
+	{
+		vec4 color = texture(tex, uv);
+		Kd = color.xyz;
+	}
+
 	// A checkerboard pattern to break up large flat expanses.  Remove when using textures.
-	if (objectId==groundId || objectId==floorId || objectId==seaId) {
+	if ((objectId==groundId || objectId==floorId || objectId==seaId) && hasTexture == 0) {
 		ivec2 uv = ivec2(floor(100.0*texCoord));
 		if ((uv[0]+uv[1])%2==0)
 			Kd *= 0.9; }
 	
+	if(objectId==lPicId)
+	{
+		float c;
+		bool x = fract(uv.x * 4) < 0.5;
+		bool y = fract(uv.y * 4) < 0.5;
+		if( (x || y) && !(x && y) )
+			c = 1;
+		else
+			c = 0;
+		Kd = vec3(c,c,c);
+	}
+	
+	if(objectId==rPicId)
+	{
+		bool x = abs(uv.x -0.5) > 0.45;
+		bool y = abs(uv.y -0.5) > 0.45;
+		if(x || y)
+			Kd = vec3(0.1,0.2,0.9);
+	}
+
 	// Lighting calculation
 	float LN = max(dot(L,N),0.0);
 	float HN = max(dot(H,N),0.0);
