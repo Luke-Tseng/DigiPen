@@ -51,7 +51,7 @@ Texture::Texture(const std::string& path) : textureId(0)
 }
 
 
-// Make a texture availabe to a shader program.  The unit parameter is
+// Make a texture available to a shader program.  The unit parameter is
 // a small integer specifying which texture unit should load the
 // texture.  The name parameter is the sampler2d in the shader program
 // which will provide access to the texture.

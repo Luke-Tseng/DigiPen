@@ -19,7 +19,7 @@ const int     teapotId	= 9;
 const int     spheresId	= 10;
 const int     floorId	= 11;
 
-in vec3 normalVec, lightVec, eyeVec, worldPos;
+in vec3 normalVec, lightVec, eyeVec, worldPos, tanVec;
 in vec2 texCoord;
 
 uniform int objectId;
@@ -33,6 +33,9 @@ uniform float shininess; // alpha exponent
 uniform vec3 light; // Ii
 uniform vec3 ambient; // Ia
 
+uniform sampler2D skyTexture;
+uniform sampler2D normalMap;
+uniform int hasNormal;
 uniform sampler2D tex;
 uniform int hasTexture;
 
@@ -50,6 +53,8 @@ void main()
 
 	vec2 uv = texCoord;
 
+	if(objectId == seaId)
+		uv *= 100.0;
 	if(objectId == groundId)
 		uv *= 100.0;
 	if(objectId == roomId)
@@ -58,20 +63,51 @@ void main()
 		uv *= 2.0;
 	if(objectId == teapotId)
 		uv *= 2.5;
-
+	if(objectId == skyId)
+		uv = vec2(0.5 - atan(V.y, V.x)/(2 * 3.14159), acos(V.z) / 3.14159);
+	
 	if (hasTexture == 1)
 	{
 		vec4 color = texture(tex, uv);
 		Kd = color.xyz;
 	}
 
-	// A checkerboard pattern to break up large flat expanses.  Remove when using textures.
-	if ((objectId==groundId || objectId==floorId || objectId==seaId) && hasTexture == 0) {
-		ivec2 uv = ivec2(floor(100.0*texCoord));
-		if ((uv[0]+uv[1])%2==0)
-			Kd *= 0.9; }
+	if (hasNormal == 1)
+	{
+		vec3 delta = texture(normalMap, uv).xyz;
+		delta = delta*2.0 - vec3(1,1,1);
+		vec3 T = normalize(tanVec);
+		vec3 B = normalize(cross(T,N));
+		N = delta.x*T + delta.y*B + delta.z*N;
+	}
+
+	// Lighting calculation
+	float LN = max(dot(L,N),0.0);
+	float HN = max(dot(H,N),0.0);
+	float LH = max(dot(L,H),0.0);
+	float NL = max(dot(N,L),0.0);
 	
-	if(objectId==lPicId)
+	// skydome reflection
+	vec3 R = normalize(-2 * dot(V,N) - V);
+	vec2 uR = vec2(0.5 - atan(R.y,R.x) / (2 * 3.14159), acos(R.z) / 3.14159);
+	vec3 Kr = texture(skyTexture, uR).xyz;
+	float alpha = shininess;
+	float reflectFrac = 0.01;
+	
+	// Output skydome without light calculation
+	if(objectId == skyId)
+	{
+		FragColor.xyz = Kd;
+		return;
+	}
+
+	if(objectId == seaId)
+	{
+		Kd = vec3(0.0,0.0,0.0);
+		reflectFrac = 0.75;
+	}
+	
+	if(objectId == lPicId)
 	{
 		float c;
 		bool x = fract(uv.x * 4) < 0.5;
@@ -83,7 +119,7 @@ void main()
 		Kd = vec3(c,c,c);
 	}
 	
-	if(objectId==rPicId)
+	if(objectId == rPicId)
 	{
 		bool x = abs(uv.x -0.5) > 0.45;
 		bool y = abs(uv.y -0.5) > 0.45;
@@ -91,18 +127,11 @@ void main()
 			Kd = vec3(0.1,0.2,0.9);
 	}
 
-	// Lighting calculation
-	float LN = max(dot(L,N),0.0);
-	float HN = max(dot(H,N),0.0);
-	float LH = max(dot(L,H),0.0);
-	float NL = max(dot(N,L),0.0);
-	
 	// BRDF formula
+	vec3 reflect = reflectFrac * Kr;
 	vec3 F = Ks + ((vec3(1,1,1) - Ks) * pow((1 - LH),5));
 	float D = ((a + 2.0)/ (2.0 * 3.14159)) * pow(HN, a);
 	vec3 BRDF = (Kd / 3.14159) + ((F * D) / (4 * LH * LH));
 
-	gl_FragColor.xyz = (Ia * Kd) + (Ii * NL * BRDF);
-
-	// FragColor.xyz = vec3(0.5,0.5,0.5)*Kd + Kd*max(dot(L,N),0.0);
+	FragColor.xyz = (Ia * Kd) + (Ii * NL * BRDF) + reflect;
 }

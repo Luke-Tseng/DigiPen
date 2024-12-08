@@ -227,19 +227,29 @@ void Scene::InitializeScene()
 	Texture* groundTexture = new Texture("textures/grass.jpg");
 	Texture* houseTexture = new Texture("textures/my-house-01.png");
 	Texture* roomTexture = new Texture("textures/Standard_red_pxr128.png");
+	Texture* skyTexture = new Texture("skys/sky.jpg");
+
+	Texture* boxNormalMap = new Texture("textures/Brazilian_rosewood_pxr128_normal.png");
+	Texture* roomNormalMap = new Texture("textures/Standard_red_pxr128_normal.png");
+	Texture* seaNormalMap = new Texture("textures/ripples_normalmap.png");
+	Texture* floorNormalMap = new Texture("textures/6670-normal.jpg");
+
 
 	// @@ To change an object's surface parameters (Kd, Ks, or alpha),
 	// modify the following lines.
 
+	sky = new Object(SpherePolygons, skyId, glm::vec3(1, 1, 1), glm::vec3(1, 1, 1), 0, skyTexture);
+	Object::skyTexture = skyTexture;
+
 	central = new Object(NULL, nullId);
 	anim = new Object(NULL, nullId);
-	room = new Object(RoomPolygons, roomId, brickColor, black, 1, roomTexture);
-	floor = new Object(FloorPolygons, floorId, floorColor, black, 1, floorTexture);
+	room = new Object(RoomPolygons, roomId, brickColor, black, 1, roomTexture, roomNormalMap);
+	floor = new Object(FloorPolygons, floorId, floorColor, black, 1, floorTexture, floorNormalMap);
 	teapot = new Object(TeapotPolygons, teapotId, brassColor, brightSpec, 120, teapotTexture);
-	podium = new Object(BoxPolygons, boxId, glm::vec3(woodColor), polishedSpec, 10, boxTexture);
-	sky = new Object(SpherePolygons, skyId, black, black, 0);
+	podium = new Object(BoxPolygons, boxId, glm::vec3(woodColor), polishedSpec, 10, boxTexture, boxNormalMap);
 	ground = new Object(GroundPolygons, groundId, grassColor, black, 1, groundTexture);
-	sea = new Object(SeaPolygons, seaId, waterColor, brightSpec, 120);
+	sea = new Object(SeaPolygons, seaId, waterColor, brightSpec, 120, NULL, seaNormalMap);
+
 	leftFrame = FramedPicture(Identity, lPicId, BoxPolygons, QuadPolygons, NULL);
 	rightFrame = FramedPicture(Identity, rPicId, BoxPolygons, QuadPolygons, houseTexture);
 	spheres = SphereOfSpheres(SpherePolygons);

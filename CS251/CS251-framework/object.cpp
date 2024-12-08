@@ -29,11 +29,12 @@ using namespace gl;
 #include <glu.h>                // For gluErrorString
 #define CHECKERROR {GLenum err = glGetError(); if (err != GL_NO_ERROR) { fprintf(stderr, "OpenGL error (at line object.cpp:%d): %s\n", __LINE__, gluErrorString(err)); exit(-1);} }
 
+Texture* Object::skyTexture;
 
 Object::Object(Shape* _shape, const int _objectId,
-	const glm::vec3 _diffuseColor, const glm::vec3 _specularColor, const float _shininess, Texture* _texture)
+	const glm::vec3 _diffuseColor, const glm::vec3 _specularColor, const float _shininess, Texture* _texture, Texture* _normalMap)
 	: diffuseColor(_diffuseColor), specularColor(_specularColor), shininess(_shininess),
-	shape(_shape), objectId(_objectId), drawMe(true), texture(_texture)
+	shape(_shape), objectId(_objectId), drawMe(true), texture(_texture), normalMap(_normalMap)
 
 {}
 
@@ -87,6 +88,29 @@ void Object::Draw(ShaderProgram* program, glm::mat4& objectTr)
 	// the shader program of the texture-unit number.  See
 	// Texture::Bind for the 4 lines of code to do exactly that.
 
+	// sky texture
+	skyTexture->BindTexture(objectId, program->programId, "skyTexture");
+	
+	if (normalMap != NULL)
+	{
+		if (objectId == seaId)
+		{
+			normalMap->BindTexture(0, program->programId, "normalMap");
+		}
+		else
+		{
+			normalMap->BindTexture(objectId, program->programId, "normalMap");
+		}
+		loc = glGetUniformLocation(program->programId, "hasNormal");
+		glUniform1i(loc, 1);
+	}
+	else
+	{
+		loc = glGetUniformLocation(program->programId, "hasNormal");
+		glUniform1i(loc, 0);
+	}
+
+
 	if (texture != NULL)
 	{
 		texture->BindTexture(objectId, program->programId, "tex");
@@ -108,6 +132,14 @@ void Object::Draw(ShaderProgram* program, glm::mat4& objectTr)
 	if (texture != NULL)
 	{
 		texture->UnbindTexture(objectId);
+	}
+	if (normalMap != NULL)
+	{
+		normalMap->UnbindTexture(objectId);
+	}
+	if (skyTexture != NULL)
+	{
+		skyTexture->UnbindTexture(objectId);
 	}
 	CHECKERROR;
 
