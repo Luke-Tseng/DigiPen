@@ -2,10 +2,10 @@
 /MAT345/hard_ham
 /MAT345/spam
 /MAT345/input
-/CS251/CS251-framework/Release
-/CS251/CS251-framework/Debug
-/CS251/CS251-framework/libs
-/CS251/CS251-framework/textures
-/CS251/CS251-framework/skys
+/CS251/Release
+/CS251/Debug
+/CS251/libs
+/CS251/textures
+/CS251/skys
 /CS232/athlete_events.csv
 *.vs
