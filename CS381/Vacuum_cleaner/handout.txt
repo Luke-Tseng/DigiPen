@@ -16,7 +16,7 @@ Study environment.cpp and environment.h.
 
 Agent start position (home position) and initial heading (orientation) are arbitrary - see file format description.
 
-Actions (possible return values from agent's Move function:
+Actions (possible return values from agent's Move function):
  - left
  - right
  - forward
