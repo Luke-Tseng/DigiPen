@@ -93,6 +93,12 @@
         "shared_mutex": "cpp",
         "source_location": "cpp",
         "stdfloat": "cpp",
-        "unordered_set": "cpp"
+        "unordered_set": "cpp",
+        "cfenv": "cpp",
+        "memory_resource": "cpp",
+        "strstream": "cpp",
+        "typeindex": "cpp",
+        "valarray": "cpp",
+        "variant": "cpp"
     }
 }

@@ -10,6 +10,7 @@
 #include <utility>
 #include <algorithm>
 #include <limits>
+#include <map>
 
 template <typename C>
 struct Arc {
